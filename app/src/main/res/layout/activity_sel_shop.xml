@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_sel_shop"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:title="选择店铺"
+        app:titleColor="#333333"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tb_sel_shop"
+        android:layout_marginTop="9.5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="6dp"
+            android:padding="14.5dp"
+            android:text="石家庄"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@mipmap/icon_switching_address" />
+
+        <EditText
+            android:id="@+id/et_search_shop"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/shape_corners_f6f6f6_dp7"
+            android:drawableEnd="@mipmap/icon_search"
+            android:hint="请输入企业名称"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/color_black"
+            android:textColorHint="#999999"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <com.bossed.waej.customview.ContactRecyclerView
+        android:id="@+id/contact_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_search" />
+</RelativeLayout>

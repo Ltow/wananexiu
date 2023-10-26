@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="33dp"
+        android:text="张三"
+        android:textColor="#ff999999"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="90dp"
+        android:text="13912345678"
+        android:textColor="#ff999999"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="191dp"
+        android:text="2022-09-08"
+        android:textColor="#ff999999"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="64dp"
+        android:layout_height="19dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_stroke_3477fc_corners_dp6"
+        android:gravity="center"
+        android:text="单据详情"
+        android:textColor="#ff3477fc"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="#EEEEEE" />
+</RelativeLayout>

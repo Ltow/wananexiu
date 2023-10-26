@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/shape_corners_fafafa_dp6"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="15dp"
+        android:text="XXXX机油滤清器"
+        android:textColor="#ff333333"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/tv_oe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="27dp"
+            android:layout_weight="1"
+            android:text="OE号"
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_num_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="进货数量："
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="52dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="12dp"
+            android:gravity="center_vertical|end"
+
+            android:text="x3"
+            android:textColor="#333"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="27dp"
+            android:layout_weight="1"
+            android:text="编码型号品牌"
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_price_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="进货单价："
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="52dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="12dp"
+            android:gravity="center_vertical|end"
+
+            android:text="150.00"
+            android:textColor="#333"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_money_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="进货金额："
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="52dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="12dp"
+            android:gravity="center_vertical|end"
+
+            android:text="150.00"
+            android:textColor="#333"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>

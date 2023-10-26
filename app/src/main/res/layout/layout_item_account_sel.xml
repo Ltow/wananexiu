@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tv_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:drawablePadding="12dp"
+    android:gravity="center_vertical"
+    android:paddingStart="30dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="12dp"
+    android:text="李光旭微信"
+    android:textColor="#ff333333"
+    android:textSize="13sp"
+    app:drawableStartCompat="@drawable/checkbox_button9" />

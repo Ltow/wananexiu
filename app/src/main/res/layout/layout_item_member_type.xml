@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="玻璃水"
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/et_price_item"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/shape_stroke_cccccc_corners_dp0"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="19dp"
+        android:layout_toEndOf="@+id/et_price_item"
+        android:text="次"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tv_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/v"
+        android:text="材料成本单价"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/et_costPrice"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="6.5dp"
+        android:layout_toStartOf="@+id/tv_y"
+        android:background="@drawable/shape_stroke_cccccc_corners_dp0"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="19dp"
+        android:text="元"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_cb"
+        android:layout_alignEnd="@+id/tv_cb"
+        android:layout_marginTop="22dp"
+        android:text="员工提成"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/et_madeFee"
+        android:layout_width="50dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/tv_y"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="6.5dp"
+        android:layout_toStartOf="@+id/tv_y2"
+        android:background="@drawable/shape_stroke_cccccc_corners_dp0"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_y2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_y"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="19dp"
+        android:text="元"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/iv_delete_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_y2"
+        android:layout_alignParentEnd="true"
+        android:padding="15dp"
+        android:src="@mipmap/icon_delete_item" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/iv_delete_item"
+        android:background="#EEEEEE" />
+</RelativeLayout>

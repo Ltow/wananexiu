@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent"
+    android:background="@color/color_layout_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="221dp"
+            android:background="@mipmap/icon_background" />
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/tb_page"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:barStyle="transparent"
+            app:leftIcon="@null"
+            app:title="首页"
+            app:titleSize="17sp"
+            app:titleStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/rl_shop_msg_page"
+            android:layout_width="330dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="121dp"
+            android:background="@drawable/shape_corners_dp5">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:src="@mipmap/icon_shop_massage" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="152.5dp"
+                android:layout_marginTop="47dp"
+                android:text="店铺信息"
+                android:textColor="#ff333333"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="152.5dp"
+                android:layout_marginTop="76dp"
+                android:text="负责配送的所有店铺信息"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_need_replenishment_page"
+            android:layout_width="330dp"
+            android:layout_height="140dp"
+            android:layout_below="@+id/rl_shop_msg_page"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_corners_dp5">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:src="@mipmap/icon_need_repair" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="152.5dp"
+                android:layout_marginTop="47dp"
+                android:text="需补货店铺"
+                android:textColor="#ff333333"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="152.5dp"
+                android:layout_marginTop="76dp"
+                android:text="店铺已上传的补货信息"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_distribution_order_page"
+            android:layout_width="330dp"
+            android:layout_height="140dp"
+            android:layout_below="@+id/rl_need_replenishment_page"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_corners_dp5">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:src="@mipmap/icon_delivery_order" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="152.5dp"
+                android:layout_marginTop="47dp"
+                android:text="配送订单"
+                android:textColor="#ff333333"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="152.5dp"
+                android:layout_marginTop="76dp"
+                android:text="配送的店铺补货订单"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_below="@+id/rl_distribution_order_page" />
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

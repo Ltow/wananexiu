@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_corners_ffffff_dp15"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="提醒处理"
+        android:textColor="#ff333333"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_stroke_eeeeee_corners_dp5"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="名称电话"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            app:drawableEndCompat="@mipmap/icon_call" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#EEEEEE" />
+
+        <TextView
+            android:id="@+id/tv_car_no"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:text="车牌"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#EEEEEE" />
+
+        <TextView
+            android:id="@+id/tv_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="年检到期日期"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="15dp"
+            android:background="#EEEEEE" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="备注"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="请输入 "
+                android:layout_marginBottom="10dp"
+                android:minLines="3"
+                android:selectAllOnFocus="true"
+                android:textColor="#333"
+                android:textColorHint="#ff999999"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#EEEEEE" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                android:text="是否继续提醒"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:id="@+id/sb_continue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:checked="false"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                app:kswBackDrawable="@drawable/track"
+                app:kswTextOff="否"
+                app:kswTextOn="是"
+                app:kswThumbDrawable="@drawable/thumb" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#EEEEEE" />
+
+        <LinearLayout
+            android:id="@+id/ll_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="下次保养里程      50000km"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#EEEEEE" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="下次保养日期      2012-12-12"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#EEEEEE" />
+        </LinearLayout>
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_operator"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="42dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:paddingStart="15dp"-->
+<!--            android:text="操作员    李四"-->
+<!--            android:textColor="#ff333333"-->
+<!--            android:textSize="13sp" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_stroke_cccccc_dp6"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#ffffffff"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/tv_confirm"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_blue_gradient_bg"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="#ffffffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

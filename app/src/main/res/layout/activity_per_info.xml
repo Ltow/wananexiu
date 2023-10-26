@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_per_info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:rightIconTint="#333333"
+        app:title="个人信息"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_per_info"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_head"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:onClick="onClick"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:layout_weight="1"
+                android:text="头像"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_head"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:onClick="onRepeatClick"
+                android:src="@mipmap/icon_head1"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="14dp"
+                android:src="@mipmap/icon_674" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:background="#EEEEEE" />
+
+        <LinearLayout
+            android:id="@+id/ll_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:onClick="onRepeatClick"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:layout_weight="1"
+                android:text="姓名"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_nickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="14dp"
+                android:drawablePadding="7dp"
+                android:textColor="#ff999999"
+                android:textSize="13sp"
+                app:drawableEndCompat="@mipmap/icon_674" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:background="#EEEEEE" />
+
+        <LinearLayout
+            android:id="@+id/ll_phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:onClick="onRepeatClick"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:layout_weight="1"
+                android:text="电话"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_phonenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="14dp"
+                android:drawablePadding="7dp"
+                android:textColor="#ff999999"
+                android:textSize="13sp"
+                app:drawableEndCompat="@mipmap/icon_674" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:background="#EEEEEE" />
+
+        <LinearLayout
+            android:id="@+id/ll_inviteCode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:onClick="onRepeatClick"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:layout_weight="1"
+                android:text="邀请码"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_inviteCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="14dp"
+                android:drawablePadding="7dp"
+                android:textColor="#ff999999"
+                android:textSize="13sp"
+                app:drawableEndCompat="@mipmap/icon_674" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_update_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:onClick="onRepeatClick"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="33dp"
+                android:layout_weight="1"
+                android:text="修改密码"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="14dp"
+                android:drawablePadding="7dp"
+                android:text="已设置"
+                android:textColor="#ff999999"
+                android:textSize="13sp"
+                app:drawableEndCompat="@mipmap/icon_674" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/rl_content"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_bank_account"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:title="银行账号维护"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_below="@+id/tb_bank_account">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f6f6f6"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_gradient_accounts_bg">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="18dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="银行账号数量"
+                        android:textColor="#ffb0dfff"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="#7EDCFF" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_total_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="18dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="账面总金额"
+                        android:textColor="#ffb0dfff"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/shape_corners_ffffff_dp10"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_wechat"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:background="@drawable/shape_fff7ed_10_10_0_0"
+                    android:onClick="onClick">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:text="微信"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/iv_wechat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:src="@mipmap/icon_close_down" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_add_wechat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="19dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/shape_stroke_fc8a25_dp9_5"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="11dp"
+                        android:text="添加账号"
+                        android:textColor="#fffc8a25"
+                        android:textSize="10sp"
+                        app:drawableStartCompat="@mipmap/icon_add_item"
+                        app:drawableTint="#fffc8a25" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_wechat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/shape_corners_ffffff_dp10"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_ali"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:background="@drawable/shape_fff7ed_10_10_0_0"
+                    android:onClick="onClick">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:text="支付宝"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/iv_ali"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:src="@mipmap/icon_close_down" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_add_ali"
+                        android:layout_width="wrap_content"
+                        android:layout_height="19dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/shape_stroke_fc8a25_dp9_5"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="11dp"
+                        android:text="添加账号"
+                        android:textColor="#fffc8a25"
+                        android:textSize="10sp"
+                        app:drawableStartCompat="@mipmap/icon_add_item"
+                        app:drawableTint="#fffc8a25" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ali"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_corners_ffffff_dp10"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_bank"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:background="@drawable/shape_fff7ed_10_10_0_0"
+                    android:onClick="onClick">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:text="银行卡"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/iv_bank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:src="@mipmap/icon_close_down" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_add_bank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="19dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/shape_stroke_fc8a25_dp9_5"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="11dp"
+                        android:text="添加账号"
+                        android:textColor="#fffc8a25"
+                        android:textSize="10sp"
+                        app:drawableStartCompat="@mipmap/icon_add_item"
+                        app:drawableTint="#fffc8a25" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_bank_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/shape_corners_ffffff_dp10"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_cash"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:background="@drawable/shape_fff7ed_10_10_0_0"
+                    android:onClick="onClick">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:text="现金"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/iv_cash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:src="@mipmap/icon_close_down" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_add_cash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="19dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/shape_stroke_fc8a25_dp9_5"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="11dp"
+                        android:text="添加账号"
+                        android:textColor="#fffc8a25"
+                        android:textSize="10sp"
+                        app:drawableStartCompat="@mipmap/icon_add_item"
+                        app:drawableTint="#fffc8a25" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_cash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_corners_ffffff_dp10"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:background="@drawable/shape_fff7ed_10_10_0_0">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:text="备付金"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:src="@mipmap/icon_close_down" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_add_spare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="19dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/shape_stroke_fc8a25_dp9_5"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="11dp"
+                        android:text="添加账号"
+                        android:textColor="#fffc8a25"
+                        android:textSize="10sp"
+                        app:drawableStartCompat="@mipmap/icon_add_item"
+                        app:drawableTint="#fffc8a25" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_spare"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_skip"
+                    android:layout_width="0dp"
+                    android:layout_height="49dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_stroke_cccccc_dp6"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="跳过"
+                    android:textColor="#ffffffff"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/tv_next"
+                    android:layout_width="0dp"
+                    android:layout_height="49dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_blue_gradient_bg"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="注册"
+                    android:textColor="#ffffffff"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

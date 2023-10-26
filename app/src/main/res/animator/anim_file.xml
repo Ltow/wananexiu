@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="sequentially">
+
+<!--    &lt;!&ndash;  X轴方向平移  &ndash;&gt;-->
+<!--    <objectAnimator-->
+<!--        android:duration="2000"--><!-- 动画播放时长-->
+<!--        android:interpolator="@android:anim/bounce_interpolator"--> <!--  插值器的使用：android:interpolator="@android:anim/bounce_interpolator"  -->
+<!--        android:propertyName="translationX"--><!--动画属性-->
+<!--        android:valueFrom="-500"--><!--初始值-->
+<!--        android:valueTo="0"--><!--结束值-->
+<!--        android:valueType="floatType" />-->
+
+    <!--  Y轴方向平移  -->
+    <objectAnimator
+        android:duration="1000"
+        android:propertyName="translationY"
+        android:valueFrom="-60"
+        android:valueTo="0"
+        android:valueType="floatType" />
+
+    <!--    &lt;!&ndash;  X轴横向拉伸  &ndash;&gt;-->
+    <!--    <objectAnimator-->
+    <!--        android:duration="2000"-->
+    <!--        android:propertyName="scaleX"-->
+    <!--        android:valueFrom="1"-->
+    <!--        android:valueTo="2"-->
+    <!--        android:valueType="floatType" />-->
+
+    <!--    &lt;!&ndash;  Y轴纵向拉伸  &ndash;&gt;-->
+    <!--    <objectAnimator-->
+    <!--        android:duration="2000"-->
+    <!--        android:propertyName="scaleY"-->
+    <!--        android:valueFrom="1"-->
+    <!--        android:valueTo="2"-->
+    <!--        android:valueType="floatType" />-->
+
+    <!--    &lt;!&ndash;  透明度  &ndash;&gt;-->
+    <!--    <objectAnimator-->
+    <!--        android:duration="1500"-->
+    <!--        android:propertyName="alpha"-->
+    <!--        android:valueFrom="1"-->
+    <!--        android:valueTo="0"-->
+    <!--        android:valueType="floatType" />-->
+
+    <!--    &lt;!&ndash;  旋转  &ndash;&gt;-->
+    <!--    <objectAnimator-->
+    <!--        android:duration="3000"-->
+    <!--        android:propertyName="rotation"-->
+    <!--        android:valueFrom="0"-->
+    <!--        android:valueTo="360"-->
+    <!--        android:valueType="floatType" />-->
+</set>

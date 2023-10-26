@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/shape_corners_ffffff_dp6">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/shape_circle_999999" />
+
+    <TextView
+        android:id="@+id/tv_nickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_head"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/iv_head"
+        android:text="M**u"
+        android:textColor="#ff333333"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_head"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/iv_head"
+        android:text="2020-01-01 10:45"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="@style/roomRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_head"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="15dp"
+        android:clickable="false"
+        android:isIndicator="true" />
+
+    <TextView
+        android:id="@+id/tv_packageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_head"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="12dp"
+        android:text="基础套餐【主机*1+辅助摄像头*2】"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_evaluation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_packageName"
+        android:layout_alignStart="@+id/tv_packageName"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toStartOf="@+id/iv_reply"
+        android:text="非常棒的安装体验！"
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/iv_reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="5dp"
+        android:padding="10dp"
+        android:src="@mipmap/icon_reply" />
+
+    <LinearLayout
+        android:id="@+id/ll_reply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_evaluation"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="商家回复"
+            android:textColor="#ff999999"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="感谢您的支持，我们的服务会一直坚持下去。"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+    </LinearLayout>
+</RelativeLayout>

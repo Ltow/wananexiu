@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_part_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:rightIconTint="#333333"
+        app:title="博士德BVDC车辆数据中心"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <com.bossed.waej.customview.GradientTextView
+        android:id="@+id/gtv_oe"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/tb_part_search"
+        android:layout_centerHorizontal="true"
+        android:text="配件查询"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/gtv_oe"
+        android:background="#F6F6F6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_corners_ffffff_dp3"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:text="VIN码"
+                    android:textColor="#ff333333"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="70dp"
+                    android:background="#F5F5F5" />
+
+                <EditText
+                    android:id="@+id/et_vin"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="80dp"
+                    android:layout_toStartOf="@+id/ic_scan"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+
+                    android:textColor="#ff333333"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/ic_scan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:onClick="onRepeatClick"
+                    android:padding="10dp"
+                    android:src="@mipmap/icon_scan_blue" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="#EEEEEE" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:text="配件名称"
+                    android:textColor="#ff333333"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="70dp"
+                    android:background="#F5F5F5" />
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="80dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="输入配件名称"
+
+                    android:textColor="#ff333333"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:text="车型"
+                    android:textColor="#ff333333"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="70dp"
+                    android:background="#F5F5F5" />
+
+                <TextView
+                    android:id="@+id/tv_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="80dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+
+                    android:textColor="#ff333333"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="45dp"
+            android:background="@drawable/shape_corners_3477fc_dp3"
+            android:gravity="center"
+            android:onClick="onRepeatClick"
+            android:text="查询"
+            android:textColor="#ffffffff"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="3dp"
+            android:text="查询信息"
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            app:drawableStartCompat="@mipmap/icon_search_msg" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_part"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+</RelativeLayout>

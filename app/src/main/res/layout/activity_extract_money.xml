@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_extract_money"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:barStyle="light"
+        app:leftIcon="@mipmap/icon_left"
+        app:title="提现"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tb_extract_money"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CCCCCC" />
+
+        <EditText
+            android:id="@+id/tv_cash_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="17dp"
+            android:inputType="numberDecimal"
+
+            android:text="0.00"
+            android:textColor="#ff333333"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="当前可提现的金额（元）"
+            android:textColor="#ff999999"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="17.5dp"
+            android:background="@color/color_layout_bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="提现金额"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13.5dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_100"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_button2"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="100元"
+                android:textColor="#ff999999"
+                android:textSize="19sp" />
+
+            <CheckBox
+                android:id="@+id/cb_200"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_button2"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="200元"
+                android:textColor="#ff999999"
+                android:textSize="19sp" />
+
+            <CheckBox
+                android:id="@+id/cb_300"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_button2"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="300元"
+                android:textColor="#ff999999"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13.5dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_400"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_button2"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="400元"
+                android:textColor="#ff999999"
+                android:textSize="19sp" />
+
+            <CheckBox
+                android:id="@+id/cb_500"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_button2"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="500元"
+                android:textColor="#ff999999"
+                android:textSize="19sp" />
+
+            <CheckBox
+                android:id="@+id/cb_600"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_button2"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="600元"
+                android:textColor="#ff999999"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="17.5dp"
+            android:background="@color/color_layout_bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="提现方式"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="13.5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/shape_stroke_333333_corners_dp5"
+            android:drawablePadding="8.5dp"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="支付宝"
+            android:textColor="#ff333333"
+            android:textSize="15sp"
+            app:drawableStartCompat="@mipmap/icon_ali_logo" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_immediately_cash"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/color_theme"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="立即提现"
+        android:textColor="#ffffffff"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="63dp"
+        android:background="#CCCCCC" />
+</RelativeLayout>

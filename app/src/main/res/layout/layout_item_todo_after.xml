@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/shape_corners_ffffff_dp10"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:text="订单号："
+            android:textColor="#666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="658798544416545165196"
+            android:textColor="#333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:text="退款待处理"
+            android:textColor="#ff2c6ae0"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#EEEEEE" />
+
+    <TextView
+        android:layout_width="55dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_gradient_2c6ae0_4988fa_0_10_0_10dp"
+        android:gravity="center"
+        android:text="私域订单"
+        android:textColor="#ffffffff"
+        android:textSize="10sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:src="@mipmap/icon_car_logo" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="9dp"
+            android:layout_toEndOf="@+id/iv_logo"
+            android:text="SUV洗车"
+            android:textColor="#ff333333"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:text="数量X1"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_alignStart="@+id/tv_name"
+            android:layout_marginTop="10dp"
+            android:text="简介：SUV洗车"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_car_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_summary"
+            android:layout_alignStart="@+id/tv_summary"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="冀A12345"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_car_no"
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@+id/tv_car_no"
+            android:text="李四"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_contacts"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/tv_contacts"
+            android:text="18866669999"
+            android:textColor="#3477FC"
+            android:textSize="13sp" />
+    </RelativeLayout>
+</LinearLayout>

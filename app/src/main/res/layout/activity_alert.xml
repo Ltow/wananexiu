@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_alert"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="true"
+        app:title="保养提醒"
+        app:titleColor="#333333"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_alert"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_tag_w"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:onClick="onRepeatClick"
+                android:layout_weight="1"
+                android:background="@drawable/shape_corners_3477fc_dp_12_5"
+                android:gravity="center"
+                android:text="未提醒车主"
+                android:textColor="#ffffffff"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_tag_y"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:onClick="onRepeatClick"
+                android:layout_weight="1"
+                android:background="@drawable/shape_corners_3477fc_dp_12_5"
+                android:gravity="center"
+                android:text="已提醒车主"
+                android:textColor="#ffffffff"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_alert"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</RelativeLayout>

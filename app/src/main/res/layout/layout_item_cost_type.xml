@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="42dp"
+    android:background="@color/white"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="15dp"
+        android:layout_weight="1"
+        android:text="办公用品费"
+        android:textColor="#ff333333"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <com.kyleduo.switchbutton.SwitchButton
+        android:id="@+id/sb_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:padding="7.5dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:kswBackDrawable="@drawable/track"
+        app:kswThumbDrawable="@drawable/thumb" />
+
+    <ImageView
+        android:id="@+id/iv_edit_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="7.5dp"
+        android:padding="7.5dp"
+        android:src="@mipmap/icon_edite_item" />
+</LinearLayout>

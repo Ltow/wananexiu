@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_white"
+    android:layout_marginTop="10dp">
+
+    <ImageView
+        android:id="@+id/iv_member"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="13dp"
+        android:background="#E7F0FE" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/iv_member"
+        android:textColor="#ff333333"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_member"
+        android:layout_toEndOf="@+id/iv_member"
+        android:text="售价："
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/iv_member"
+        android:background="#EEEEEE">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:text="上架日期：2022-6-13"
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_off"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:background="#FC8A25"
+            android:gravity="center"
+            android:text="下架"
+            android:textColor="#ffffffff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_handle"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:background="#3477FC"
+            android:gravity="center"
+            android:text="办理"
+            android:textColor="#ffffffff"
+            android:textSize="14sp" />
+    </LinearLayout>
+</RelativeLayout>

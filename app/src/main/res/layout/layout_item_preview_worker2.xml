@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="65dp"
+    android:layout_marginEnd="5dp"
+    android:background="@drawable/shape_corners_f7f8fd_dp10"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:src="@mipmap/icon_head2_preview" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="11dp"
+        android:layout_toEndOf="@+id/iv_head"
+        android:text="张三丰"
+        android:textColor="#ff333333"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_pj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/iv_head"
+        android:text="5.00"
+        android:textColor="#ffd1422a"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_pj"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toEndOf="@+id/tv_pj"
+        android:text="1593单"
+        android:textColor="#ff999999"
+        android:textSize="10sp" />
+</RelativeLayout>

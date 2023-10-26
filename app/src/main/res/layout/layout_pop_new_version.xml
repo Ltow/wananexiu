@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_pop_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:background="@drawable/shape_updata_pop_bg">
+
+            <ImageView
+                android:id="@+id/iv_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_down_load_top" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_top"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="19dp"
+                android:text="1、全新改版，更快更好，新特性；"
+                android:textColor="#ff555555"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_down_now"
+                android:layout_width="148dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tv_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="27dp"
+                android:background="@drawable/shape_download_bg"
+                android:gravity="center"
+                android:text="立即更新"
+                android:textColor="#fffdfdfd"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/icon_close_big" />
+    </LinearLayout>
+</RelativeLayout>

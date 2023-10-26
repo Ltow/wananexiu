@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_item"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:src="@mipmap/icon682" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:onClick="onRepeatClick"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:src="@mipmap/icon_left" />
+
+    <LinearLayout
+        android:id="@+id/ll_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="325dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/shape_item_msg_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="小保养"
+            android:textColor="#ff333333"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_briefIntroduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:text="简介：空气滤芯、机油"
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:text="月售: 264 好评率: 4488"
+            android:textColor="#ff666666"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_marketPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="15dp"
+                android:text="￥788"
+                android:textColor="#ffff2e2e"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_virtualPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_marketPrice"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="1dp"
+                android:layout_toEndOf="@+id/tv_marketPrice"
+                android:text="￥788"
+                android:textColor="#ff999999"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_msg"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="项目简介"
+        android:textColor="#ff333333"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_msg"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="45dp"
+        android:text="本套餐含有一个空气滤芯、一个机油"
+        android:textColor="#ff666666"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/tv_shelves"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_blue_gradient_bg"
+        android:gravity="center"
+        android:text="上架"
+        android:onClick="onRepeatClick"
+        android:textColor="#ffffffff"
+        android:textSize="15sp" />
+</RelativeLayout>

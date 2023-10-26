@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_customer_list"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:title="客户管理"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tb_customer_list"
+        android:background="#F6F6F6"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_search_customer"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_search_edit_bg"
+            android:drawableStart="@mipmap/icon_search"
+            android:drawablePadding="8dp"
+            android:hint="车牌号、客户名称、手机号"
+            android:maxLines="1"
+            android:paddingStart="10dp"
+            android:textColor="#333"
+            android:textColorHint="#ffcacaca"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_search_btn_bg"
+            android:gravity="center"
+            android:onClick="onRepeatClick"
+            android:text="查询"
+            android:textColor="#ff3477fc"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/tv_new_customer"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_blue_gradient_bg"
+            android:gravity="center"
+            android:onClick="onRepeatClick"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="新增客户"
+            android:textColor="#ffffffff"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_customer_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_search"
+        android:background="#F6F6F6">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_customer_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</RelativeLayout>

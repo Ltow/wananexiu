@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/rl_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_car_logo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_stroke_eeeeee_corners_dp5">
+
+        <ImageView
+            android:id="@+id/iv_car_logo"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@mipmap/icon_car_logo"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_car_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/rl_car_logo"
+        android:text="冀A·51742"
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_car_no"
+        android:layout_alignStart="@+id/tv_car_no"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toEndOf="@+id/rl_car_logo"
+        android:text="丰田卡罗拉 2010 1.8T运动款"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/iv_vip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:src="@mipmap/icon_vip_status"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_alert_bx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_model"
+        android:layout_alignStart="@+id/tv_car_no"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/shape_alert_bx_bg"
+        android:paddingStart="6dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="4dp"
+        android:text="保险提醒"
+        android:textColor="#ffffffff"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/tv_alert_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_model"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/tv_alert_bx"
+        android:background="@drawable/shape_alert_by_bg"
+        android:paddingStart="6dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="4dp"
+        android:text="保养提醒"
+        android:textColor="#ffffffff"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/tv_alert_nj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_model"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/tv_alert_by"
+        android:background="@drawable/shape_alert_nj_bg"
+        android:paddingStart="6dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="4dp"
+        android:text="年检提醒"
+        android:textColor="#ffffffff"
+        android:textSize="11sp" />
+
+</RelativeLayout>

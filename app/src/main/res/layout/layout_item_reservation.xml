@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_appointments_today"
+    android:layout_width="match_parent"
+    android:layout_height="43dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.5"
+        android:paddingStart="30dp"
+        android:text="09:00-10:30 "
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tev_full_name_layout_confirmed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:text="乘用车"
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.5"
+        android:paddingEnd="20dp"
+        android:text="京A56666"
+        android:textColor="#ff333333"
+        android:textSize="13sp"
+        app:drawableEndCompat="@mipmap/icon_674" />
+</LinearLayout>

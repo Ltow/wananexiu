@@ -1,0 +1,151 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/purple_200</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <!-- Http 等待Dialog -->
+    <style name="loadingDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@null</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>  <!-- 半透明 -->
+    </style>
+
+    <!-- CenterDialog -->
+    <style name="Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <!-- BottomDialog -->
+    <style name="BottomSheetStyle" parent="Theme.AppCompat.Dialog">
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 调暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="loadingDialogProgressBar">
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDuration">1000</item>
+        <item name="android:minWidth">34dp</item>
+        <item name="android:maxWidth">34dp</item>
+        <item name="android:minHeight">34dp</item>
+        <item name="android:maxHeight">34dp</item>
+    </style>
+
+    <!--行业类型流布局item -->
+    <style name="item_checkbox">
+        <item name="android:layout_marginBottom">13dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/checked_search_selector</item>
+        <item name="android:paddingLeft">7.5dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingRight">7.5dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <!-- activity背景半透明theme -->
+    <style name="TransparentAppTheme" parent="AppTheme">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <!-- 将splash图片设置在这，这样这张图片取代白屏或黑屏 -->
+        <item name="android:windowBackground">@mipmap/ic_splash</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <declare-styleable name="CustomViewfinderView">
+        <attr name="lineColor" format="color" /><!--扫描线的颜色-->
+        <attr name="cornerColor" format="color" /><!--四边角的颜色-->
+        <attr name="scanFrameWidth" format="dimension" /><!--扫描框的宽度-->
+        <attr name="scanFrameHeight" format="dimension" /><!--扫描框的高度-->
+    </declare-styleable>
+
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_in</item>
+        <item name="android:windowExitAnimation">@anim/push_out</item>
+    </style>
+
+    <style name="BottomAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_bottom_out</item>
+    </style>
+
+    <style name="CenterAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_center_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_center_out</item>
+    </style>
+
+    <!--自定义RatingBar Color-->
+    <style name="RatingBar_CustomColor" parent="android:style/Widget.Holo.RatingBar.Indicator"><!--Background Color-->
+        <item name="colorControlNormal">#DDDDDD</item>
+        <!--Progress Color-->
+        <item name="colorControlActivated">#FFBF26</item>
+    </style>
+
+    <style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_bar</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:minWidth">16dp</item>
+    </style>
+
+    <style name="RatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@mipmap/icon_star_wite</item>
+        <item name="android:minHeight">9dp</item>
+        <item name="android:minWidth">9dp</item>
+    </style>
+
+    <style name="RatingBarRed" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@mipmap/icon_star_red</item>
+        <item name="android:minHeight">9dp</item>
+        <item name="android:minWidth">9dp</item>
+    </style>
+
+    <style name="RatingBarWhite" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@mipmap/icon_star_red</item>
+        <item name="android:minHeight">9dp</item>
+        <item name="android:progressTint">#ffffff</item>
+        <item name="android:minWidth">9dp</item>
+    </style>
+
+    <style name="RatingBarYellow" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@mipmap/icon_star_red</item>
+        <item name="android:minHeight">9dp</item>
+        <item name="android:progressTint">#FFF600</item>
+        <item name="android:minWidth">9dp</item>
+    </style>
+</resources>

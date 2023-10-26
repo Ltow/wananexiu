@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include layout="@layout/layout_special_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_member"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/rl_special_title"
+        android:layout_marginTop="10dp"
+        android:background="#F5F5F5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="27dp"
+            android:text="选择"
+            android:textColor="#ff3477fc"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="71dp"
+            android:layout_weight="1"
+            android:text="项目"
+            android:textColor="#ff3477fc"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="43dp"
+            android:text="次数"
+            android:textColor="#ff3477fc"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_member_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_member"
+        android:layout_marginBottom="65dp" />
+
+    <Button
+        android:id="@+id/tv_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_blue_gradient_bg"
+        android:gravity="center"
+        android:onClick="onRepeatClick"
+        android:text="确定"
+        android:textColor="#ffffffff"
+        android:textSize="15sp" />
+</RelativeLayout>

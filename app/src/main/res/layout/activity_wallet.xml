@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:rightTitle="余额明细"
+        app:rightTitleColor="#333"
+        app:rightTitleSize="13sp"
+        app:title="钱包"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_wallet"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_records"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:gravity="end"
+            android:onClick="onClick"
+            android:padding="15dp"
+            android:text="提现记录"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_balanceFrozen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ff999999"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_freeze"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:drawablePadding="5dp"
+                    android:onClick="onClick"
+                    android:text="冻结金额"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp"
+                    app:drawableEndCompat="@mipmap/icon_alert" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#3477FC"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:text="可提现金额"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_account"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="5dp"
+            android:background="#fff"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:onClick="onClick"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="收款账号"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            app:drawableEndCompat="@mipmap/icon_674"
+            app:drawableStartCompat="@mipmap/icon_bank_card" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/shape_orange_gradient_dp21_bg"
+        android:onClick="onClick"
+        android:text="去提现"
+        android:textColor="#ffffffff"
+        android:textSize="15sp" />
+</RelativeLayout>

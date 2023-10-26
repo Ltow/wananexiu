@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_commission_settings"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:title="提成金额设置"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_commission_settings"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="1.配件提成"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/cb_xse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="56dp"
+                android:button="@drawable/checkbox_button5"
+                android:paddingStart="9dp"
+                android:text="按销售额提成"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_xse"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_alignBottom="@+id/cb_xse"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/cb_xse"
+                android:background="@drawable/shape_stroke_cccccc_corners_dp0"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/et_xse"
+                android:layout_marginStart="7dp"
+                android:layout_toEndOf="@+id/et_xse"
+                android:text="％"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/cb_lr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cb_xse"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="22dp"
+                android:button="@drawable/checkbox_button5"
+                android:paddingStart="9dp"
+                android:text="按利润提成"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_lr"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_alignBottom="@+id/cb_lr"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/cb_lr"
+                android:background="@drawable/shape_stroke_cccccc_corners_dp0"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/et_lr"
+                android:layout_marginStart="7dp"
+                android:layout_toEndOf="@+id/et_lr"
+                android:text="％"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cb_lr"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:text="2.工费提成"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_gf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cb_lr"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="25dp"
+                android:text="工费提成"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_gf"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_alignBottom="@+id/tv_gf"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/tv_gf"
+                android:background="@drawable/shape_stroke_cccccc_corners_dp0"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/et_gf"
+                android:layout_marginStart="7dp"
+                android:layout_toEndOf="@+id/et_gf"
+                android:text="％"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="35dp"
+            android:text="提示：此提成设置不包含会员卡项目提成，会员卡项目提成在卡类别单独设置"
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+    </LinearLayout>
+</RelativeLayout>

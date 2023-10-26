@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_white">
+
+    <TextView
+        android:id="@+id/tv_peij_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="17.5dp"
+        android:text="机油"
+        android:textColor="#ff333333"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_peij_name"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/tv_peij_name"
+        android:text="X1"
+        android:textColor="@color/purple_200"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/iv_edit_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_toStartOf="@+id/iv_delete_item"
+        android:padding="10dp"
+        android:src="@mipmap/icon_edite_item" />
+
+    <ImageView
+        android:id="@+id/iv_delete_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="7dp"
+        android:padding="10dp"
+        android:src="@mipmap/icon_delete_item" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_delete_item"
+        android:layout_margin="5dp"
+        android:background="#FAFAFA"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_oe_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9.4dp"
+                android:layout_marginTop="15dp"
+                android:text="OE号：F1DU-10300-AD"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_bz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9.5dp"
+                android:layout_marginTop="8.5dp"
+                android:layout_marginBottom="20dp"
+                android:text="备注  ："
+                android:textColor="#ff333333"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_unit_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15.5dp"
+                android:layout_marginTop="14.5dp"
+                android:text="单价："
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv_unit_item"
+                android:layout_marginStart="90.5dp"
+                android:text="￥10"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_gons_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_unit_item"
+                android:layout_marginStart="15.5dp"
+                android:layout_marginTop="9.5dp"
+                android:text="工时费："
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_gsf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv_gons_item"
+                android:layout_marginStart="90.5dp"
+                android:text="￥10"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_price_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_gons_item"
+                android:layout_marginStart="15.5dp"
+                android:layout_marginTop="9.5dp"
+                android:layout_marginBottom="15dp"
+                android:text="小计："
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_xj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv_price_item"
+                android:layout_marginStart="90.5dp"
+                android:text="￥10"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dispatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/shape_circle_3477fc"
+            android:padding="5dp"
+            android:src="@mipmap/icon_dispatch" />
+
+        <TextView
+            android:id="@+id/tv_dispatch"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="14.5dp"
+            android:text="派工："
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            app:drawableEndCompat="@mipmap/icon_674" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_ti_cheng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_dispatch" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rv_ti_cheng"
+        android:background="#EEEEEE" />
+</RelativeLayout>

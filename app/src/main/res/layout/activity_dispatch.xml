@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_dispatch"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:rightTitle="新增员工"
+        app:rightTitleColor="@color/color_black"
+        app:rightTitleSize="13sp"
+        app:title="员工列表"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_dispatch"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <!--        <com.scwang.smartrefresh.layout.SmartRefreshLayout-->
+        <!--            android:id="@+id/srl_dispatch"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:layout_weight="1">-->
+
+        <!--            <com.scwang.smartrefresh.layout.header.ClassicsHeader-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content" />-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_depart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!--            <com.scwang.smartrefresh.layout.footer.ClassicsFooter-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content" />-->
+        <!--    </com.scwang.smartrefresh.layout.SmartRefreshLayout>-->
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_skip"
+                android:layout_width="0dp"
+                android:layout_height="49dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_stroke_cccccc_dp6"
+                android:gravity="center"
+                android:onClick="onRepeatClick"
+                android:text="跳过"
+                android:textColor="#ffffffff"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/tv_next"
+                android:layout_width="0dp"
+                android:layout_height="49dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_blue_gradient_bg"
+                android:gravity="center"
+                android:onClick="onRepeatClick"
+                android:text="下一步"
+                android:textColor="#ffffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

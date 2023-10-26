@@ -1,0 +1,72 @@
+package com.bossed.waej.javebean
+
+data class CustomerMsgBean(
+    val code: Int,
+    val `data`: CustomerMsgData,
+    val msg: String
+)
+
+data class CustomerMsgData(
+    val balance: Double,
+    val carList: List<Car>,
+    val createBy: String,
+    val createTime: String,
+    val customerName: String,
+    val customerPhone: String,
+    val id: Int,
+    val isVip: Int,
+    val remark: String,
+    val shopId: Int,
+    val tags: String,
+    val tenantId: Int,
+    val updateBy: String,
+    val updateTime: String,
+    val workOrderList: List<WorkOrder>
+)
+
+data class WorkOrder(
+    val brandLogo: String,
+    val brandName: String,
+    val carId: Int,
+    val carName: String,
+    val cardMoney: Int,
+    val cardNo: String,
+    val costPriceTime: String,
+    val createBy: String,
+    val createTime: String,
+    val customerId: Int,
+    val customerName: String,
+    val customerPhone: String,
+    val discountAmount: Int,
+    val dispatchTime: String,
+    val finishedTime: String,
+    val grossProfitMoney: Int,
+    val id: Int,
+    val itemCostMoney: Int,
+    val itemList: List<Item>,
+    val itemMadeFee: Int,
+    val itemMadeMoney: Int,
+    val itemMoney: Int,
+    val itemServiceFee: Int,
+    val mileage: String,
+    val netProfitMoney: Int,
+    val numInquiry: Int,
+    val numOffer: Int,
+    val oilNum: String,
+    val oilType: String,
+    val orderMoney: Int,
+    val orderSn: String,
+    val orderStatus: Int,
+    val orderType: Int,
+    val payStatus: Int,
+    val realMoney: Int,
+    val receiveBy: String,
+    val receiveTime: String,
+    val remark: String,
+    val shopId: Int,
+    val tenantId: Int,
+    val updateBy: String,
+    val updateTime: String,
+    val userCarId: Int,
+    val vnCode: String
+)

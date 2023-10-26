@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_notepad_edit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:rightIconTint="#333333"
+        app:rightTitle="完成"
+        app:rightTitleColor="#DCA600"
+        app:title="记事本"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/tb_notepad_edit"
+        android:background="#F6F6F6" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tb_notepad_edit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="2023年2月2日  下午3:56"
+        android:textColor="#ff999999"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_date"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="23dp"
+        android:background="@null"
+        android:hint="标题"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/et_title"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="23dp"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="内容"
+        android:lineSpacingExtra="5dp"
+        android:textColor="#999999"
+        android:textSize="14sp" />
+</RelativeLayout>

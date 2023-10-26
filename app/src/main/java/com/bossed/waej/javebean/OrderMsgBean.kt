@@ -1,0 +1,93 @@
+package com.bossed.waej.javebean
+
+data class OrderMsgBean(
+    val code: Int,
+    val `data`: MsgData,
+    val msg: String
+)
+
+data class MsgData(
+    val brandLogo: String,
+    val brandName: String,
+    val carId: Int,
+    val carName: String,
+    val cardMoney: Int,
+    val cardNo: String,
+    val costPriceTime: String,
+    val createBy: String,
+    val createTime: String,
+    val customerId: Int,
+    val customerName: String,
+    val customerPhone: String,
+    val discountAmount: Int,
+    val dispatchTime: String,
+    val finishedTime: String,
+    val grossProfitMoney: Int,
+    val id: Int,
+    val itemCostMoney: Int,
+    val itemList: List<Item>,
+    val itemMadeFee: Int,
+    val itemMadeMoney: Int,
+    val mileage: String,
+    val netProfitMoney: Int,
+    val numInquiry: Int,
+    val numOffer: Int,
+    val oilNum: String,
+    val oilType: String,
+    val orderMoney: Int,
+    val orderSn: String,
+    val orderStatus: Int,
+    val orderType: Int,
+    val payStatus: Int,
+    val realMoney: Int,
+    val receiveBy: String,
+    val receiveTime: String,
+    val remark: String,
+    val shopId: Int,
+    val tenantId: Int,
+    val updateBy: String,
+    val updateTime: String,
+    val userCarId: Int,
+    val vnCode: String
+)
+
+data class Item(
+    val costPrice: Int,
+    val grossProfitMoney: Int,
+    val id: Int,
+    val inquiryList: List<Inquiry>,
+    val itemMoney: Int,
+    val itemName: String,
+    val madeFee: Int,
+    val madeFeeRate: Int,
+    val madeMoney: Int,
+    val madeRate: Int,
+    val netProfitMoney: Int,
+    val num: Int,
+    val oem: String,
+    val orderId: Int,
+    val orderSn: String,
+    val remark: String,
+    val serviceFee: Int,
+    val shopId: Int,
+    val tenantId: Int,
+    val unitPrice: Int,
+    var isSelect: Boolean
+)
+
+data class Inquiry(
+    val contacts: String,
+    val contactsPhone: String,
+    val id: Int,
+    val itemName: String,
+    val num: Int,
+    val oem: String,
+    val offerMoney: Int,
+    val orderId: Int,
+    val orderSn: String,
+    val orderStatus: Int,
+    val remark: String,
+    val shopItemId: Int,
+    val supplierId: Int,
+    val supplierName: String
+)

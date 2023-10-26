@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/shape_corners_ffffff_dp6"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="23dp"
+            android:text="姓名"
+            android:textColor="#333"
+            android:textSize="13sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入姓名"
+            android:paddingStart="100dp"
+            android:paddingEnd="15dp"
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/line_eee_s_e_dp15" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="23dp"
+            android:text="身份证号"
+            android:textColor="#333"
+            android:textSize="13sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入身份证号"
+            android:paddingStart="100dp"
+            android:paddingEnd="15dp"
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/line_eee_s_e_dp15" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginStart="23dp"
+        android:gravity="center_vertical"
+        android:text="身份证照片"
+        android:textColor="#333"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_dashed">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:drawablePadding="15dp"
+                android:text="添加人像面"
+                android:textColor="#ffbfbfbf"
+                android:textSize="13sp"
+                app:drawableTopCompat="@mipmap/icon_add_pic" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_dashed">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:drawablePadding="15dp"
+                android:text="添加国徽面"
+                android:textColor="#ffbfbfbf"
+                android:textSize="13sp"
+                app:drawableTopCompat="@mipmap/icon_add_pic" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include layout="@layout/line_eee_s_e_dp15" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="23dp"
+            android:text="银行卡号"
+            android:textColor="#333"
+            android:textSize="13sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入银行卡号"
+            android:paddingStart="100dp"
+            android:paddingEnd="15dp"
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/line_eee_s_e_dp15" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="23dp"
+            android:text="银行名称"
+            android:textColor="#333"
+            android:textSize="13sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="银行名称"
+            android:paddingStart="100dp"
+            android:paddingEnd="15dp"
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/line_eee_s_e_dp15" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="23dp"
+            android:text="开户行"
+            android:textColor="#333"
+            android:textSize="13sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="开户行"
+            android:paddingStart="100dp"
+            android:paddingEnd="15dp"
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/line_eee_s_e_dp15" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="23dp"
+            android:text="银行预留手机号"
+            android:textColor="#333"
+            android:textSize="13sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入预留手机号"
+            android:paddingStart="138dp"
+            android:paddingEnd="15dp"
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/line_eee_s_e_dp15" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="23dp"
+            android:text="地址"
+            android:textColor="#333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入选择地址"
+            android:onClick="onClick"
+            android:paddingStart="138dp"
+            android:paddingEnd="15dp"
+            android:textColor="#333"
+            android:textColorHint="#999"
+            android:textSize="13sp"
+            app:drawableEndCompat="@mipmap/icon_674" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:text="我阅读并同意"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            app:drawableStartCompat="@drawable/checkbox_button9" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《分账协议》"
+            android:textColor="#3477FC"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

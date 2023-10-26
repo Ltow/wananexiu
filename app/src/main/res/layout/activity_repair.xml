@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_repair_list"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:title="订单"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_label_order"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_below="@+id/tb_repair_list"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_all_delivery_order"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick">
+
+            <TextView
+                android:id="@+id/tv_all_delivery_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="全部"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <View
+                android:id="@+id/v_all_delivery_order"
+                android:layout_width="25dp"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#224BBE"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_ing_delivery_order"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick">
+
+            <TextView
+                android:id="@+id/tv_ing_delivery_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="待发货"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <View
+                android:id="@+id/v_ing_delivery_order"
+                android:layout_width="25dp"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#224BBE"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_over_delivery_order"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick">
+
+            <TextView
+                android:id="@+id/tv_over_delivery_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="待收货"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <View
+                android:id="@+id/v_over_delivery_order"
+                android:layout_width="25dp"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#224BBE"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_sure_delivery_order"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick">
+
+            <TextView
+                android:id="@+id/tv_sure_delivery_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="已完成"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <View
+                android:id="@+id/v_sure_delivery_order"
+                android:layout_width="25dp"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#224BBE"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_repair_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_label_order"
+        android:background="@color/color_layout_bg"
+        app:srlAccentColor="#fff"
+        app:srlEnableLoadMoreWhenContentNotFull="false"
+        app:srlEnablePreviewInEditMode="false"
+        app:srlFixedHeaderViewId="@+id/profile"
+        app:srlPrimaryColor="#444">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_repair_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</RelativeLayout>

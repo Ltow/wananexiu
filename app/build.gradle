@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+def extAndroid = rootProject.ext.android
+def extDependencies = rootProject.ext.dependencies
+
+android {
+    compileSdkVersion extAndroid.compileSdkVersion
+
+    defaultConfig {
+        multiDexEnabled true
+        applicationId extAndroid.applicationId
+        minSdkVersion extAndroid.minSdkVersion
+        targetSdkVersion extAndroid.targetSdkVersion
+        versionCode extAndroid.versionCode
+        versionName extAndroid.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: extAndroid.applicationId,
+                JPUSH_APPKEY : "93515f0da35a12d0c40a9f2d", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation extDependencies["appcompat"]
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation extDependencies["core-ktx"]
+    implementation extDependencies["material"]
+    implementation extDependencies["constraintlayout"]
+    implementation extDependencies["junit"]
+    implementation extDependencies["junit"]
+    implementation extDependencies["espresso-core"]
+    implementation extDependencies["retrofit"]
+    implementation extDependencies["adapter-rxjava2"]
+    implementation extDependencies["converter-gson"]
+    implementation extDependencies["logging-interceptor"]
+    implementation extDependencies["rxjava"]
+    implementation extDependencies["rxandroid"]
+    implementation extDependencies["utilcode"]
+    implementation extDependencies["autosize"]
+    implementation extDependencies["exoplayer-core"]
+    implementation extDependencies["exoplayer-dash"]
+    implementation extDependencies["exoplayer-ui"]
+    implementation extDependencies["stickylistheaders"]
+    implementation extDependencies["immersionbar"]
+    implementation extDependencies["immersionbar-components"]
+    implementation extDependencies["immersionbar-ktx"]
+    implementation extDependencies["TitleBar"]
+    implementation extDependencies["circleimageview"]
+    implementation extDependencies["SmartRefreshLayout"]
+    implementation extDependencies["BaseRecyclerViewAdapterHelper"]
+    implementation extDependencies["android"]
+    implementation extDependencies["jcore"]
+    implementation extDependencies["jpush"]
+    implementation extDependencies["glide"]
+    annotationProcessor extDependencies["compiler"]
+    implementation extDependencies["eventbus"]
+    implementation extDependencies["flexbox"]
+    implementation extDependencies["PickerView"]
+    implementation extDependencies["wheelview"]
+    implementation extDependencies["vehicleedittext"]
+    implementation extDependencies["picture_library"]
+    implementation extDependencies["oss-android-sdk"]
+    implementation extDependencies["okio"]
+    implementation extDependencies["zxing-android-embedded"]
+    implementation extDependencies["textdrawable"]
+    implementation extDependencies["EasySwipeMenuLayout"]
+    implementation extDependencies["DateTimePicker"]
+    implementation extDependencies["switchbutton"]
+    implementation extDependencies["wechatpay"]
+    implementation extDependencies["MagicIndicator"]
+    implementation extDependencies["html-textview"]
+    compile(name: 'alipaySdk-15.8.06.211122170115', ext: 'aar')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}

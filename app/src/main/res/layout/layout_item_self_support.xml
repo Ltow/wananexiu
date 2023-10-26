@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/shape_corners_ffffff_dp10">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:src="@mipmap/icon_support_item" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="18dp"
+        android:layout_toEndOf="@+id/iv_head"
+        android:text="泡沫清洗剂"
+        android:textColor="#ff333333"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:text="已上架"
+        android:textColor="#ff2c6ae0"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_alignStart="@+id/tv_name"
+        android:layout_marginTop="15dp"
+        android:text="清洗工具"
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <com.kyleduo.switchbutton.SwitchButton
+        android:id="@+id/sb_person"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignTop="@+id/tv_content"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="7.5dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:kswBackDrawable="@drawable/track"
+        app:kswThumbDrawable="@drawable/thumb" />
+
+    <TextView
+        android:id="@+id/tv_xn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_content"
+        android:layout_alignStart="@+id/tv_content"
+        android:layout_marginTop="15dp"
+        android:text="虚拟售价："
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_retail_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_xn"
+        android:layout_toEndOf="@+id/tv_xn"
+        android:text="20.00元"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_sjj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_retail_price"
+        android:layout_alignStart="@+id/tv_xn"
+        android:layout_marginTop="15dp"
+        android:text="实际售价："
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_sj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_retail_price"
+        android:layout_alignStart="@+id/tv_retail_price"
+        android:layout_marginTop="15dp"
+        android:text="20.00元"
+        android:textColor="@color/red_color"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_vip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_retail_price"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/tv_sj"
+        android:background="@drawable/shape_red_gradient_bg"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="会员价：15.00元"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_retail_price"
+        android:layout_alignParentEnd="true"
+        android:padding="15dp"
+        android:src="@mipmap/icon_edite_item" />
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_pj1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="门店评价"
+        android:textColor="#ff000000"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_pj2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/shape_corners_e7f3ff_dp5"
+        android:gravity="center"
+        android:text="门店评价"
+        android:textColor="#ff000000"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_pj3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:visibility="gone"
+        android:drawablePadding="6dp"
+        android:text="门店评价"
+        android:textColor="#ff000000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/shape_preview_tag" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_pingjia4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="15dp"
+        android:background="@drawable/shape_stroke_d1d1d1_dp19"
+        android:gravity="center"
+        android:text="查看全部评价"
+        android:textColor="#ff333333"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+</LinearLayout>

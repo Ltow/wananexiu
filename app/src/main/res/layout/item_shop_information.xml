@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rl_shop_information_item"
+    android:background="@color/color_white">
+
+    <ImageView
+        android:id="@+id/iv_logo_shop_information"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tv_shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9.5dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/iv_logo_shop_information"
+        android:text="名称"
+        android:textColor="#ff333333"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_sum_shop_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_shop_name"
+        android:layout_alignStart="@+id/tv_shop_name"
+        android:layout_marginTop="8dp"
+        android:text="距离"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_phone_order_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_sum_shop_information"
+        android:layout_alignStart="@+id/tv_sum_shop_information"
+        android:layout_marginTop="8dp"
+        android:text="155555"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/iv_call_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:padding="5dp"
+        android:src="@mipmap/icon_call_phone_number" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/iv_logo_shop_information"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="#EEEEEE" />
+</RelativeLayout>

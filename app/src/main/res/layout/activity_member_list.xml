@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include layout="@layout/layout_special_title" />
+
+    <TextView
+        android:id="@+id/tv_member_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_special_title"
+        android:layout_margin="15dp"
+        android:text="会员总数 980人"
+        android:textColor="#ff333333"
+        android:textSize="12sp" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_member_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_member_total"
+        android:layout_marginBottom="65dp"
+        android:background="#f6f6f6">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_member_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_blue_gradient_bg"
+        android:gravity="center"
+        android:text="会员卡办理"
+        android:textColor="#ffffffff"
+        android:textSize="15sp" />
+</RelativeLayout>

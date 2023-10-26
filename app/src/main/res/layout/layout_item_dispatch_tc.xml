@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="派工：李XX"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/iv_delete_tc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            android:src="@mipmap/icon_delete_item" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:text="配件"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="提成比例"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/et_part_scale"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/shape_stroke_cccccc_corners_dp5"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="提成金额"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/et_part_money"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_stroke_cccccc_corners_dp5"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:text="工时费"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="提成比例"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/et_hours_scale"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/shape_stroke_cccccc_corners_dp5"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="提成金额"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/et_hours_money"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_stroke_cccccc_corners_dp5"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="10dp"
+        android:background="#f5f5f5" />
+</LinearLayout>

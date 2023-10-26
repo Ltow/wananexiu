@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_order_no"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#F6F6F6"
+        android:gravity="center_vertical"
+        android:paddingStart="15.5dp"
+        android:text="2022-06-24"
+        android:textColor="#ff333333"
+        android:textSize="12sp"
+        tools:ignore="RtlSymmetry" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white">
+
+        <RelativeLayout
+            android:id="@+id/rl_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_stroke_cccccc_corners_dp0">
+
+            <ImageView
+                android:id="@+id/iv_car_logo"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_launcher" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_che_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/rl_img"
+            android:text="冀A·51742"
+            android:textColor="#ff333333"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_jdr_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_che_no"
+            android:layout_alignStart="@+id/tv_che_no"
+            android:layout_marginTop="9.5dp"
+            android:text="接待人：里XX"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_jd_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_jdr_item"
+            android:layout_alignStart="@+id/tv_jdr_item"
+            android:layout_marginTop="9.5dp"
+            android:layout_marginBottom="15dp"
+            android:text="今天 04:12"
+            android:textColor="#ff999999"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_price_material"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="14.5dp"
+            android:text="￥278"
+            android:textColor="#ff333333"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_go_price"
+            android:layout_width="60dp"
+            android:layout_height="27dp"
+            android:layout_below="@+id/tv_price_material"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/shape_orange_gradient_dp6_bg"
+            android:gravity="center"
+            android:text="去划价"
+            android:textColor="#ffffffff"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4.5dp"
+        android:background="#F6F6F6" />
+</LinearLayout>

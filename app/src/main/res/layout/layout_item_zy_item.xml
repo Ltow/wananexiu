@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="6dp"
+        android:src="@mipmap/icon_xm_pic1" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="5dp"
+        android:layout_toStartOf="@+id/tv_ys"
+        android:layout_toEndOf="@+id/iv_pic"
+        android:text="专业汽修蘑菇钉补胎"
+        android:textColor="#ff333333"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_ys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_stroke_bbbbbb_corners_dp0"
+        android:paddingStart="5dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="3dp"
+        android:text="已售600+"
+        android:textColor="#ff666666"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_xl"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_below="@+id/tv_name"
+        android:layout_alignStart="@+id/tv_name"
+        android:layout_marginTop="15dp"
+        android:background="#FFE0DF"
+        android:text="限量特价"
+        android:textColor="#ffe15946"
+        android:textSize="9sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_xl"
+        android:layout_alignStart="@+id/tv_xl"
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@+id/tv_qg">
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥50"
+            android:textColor="#ffff2e2e"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_price"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="2dp"
+            android:layout_toEndOf="@+id/tv_price"
+            android:text="门市价￥80"
+            android:textColor="#ff666666"
+            android:textSize="11sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_qg"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/tv_xl"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_gradient_fc6c25_ff301e_dp18"
+        android:gravity="center"
+        android:text="抢购"
+        android:textColor="#ffffffff"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+</RelativeLayout>

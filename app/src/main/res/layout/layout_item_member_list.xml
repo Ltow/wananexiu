@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@color/white">
+
+    <View
+        android:layout_width="4dp"
+        android:layout_height="42dp"
+        android:background="#69B4FE" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="15dp"
+        android:text="肖肖"
+        android:textColor="#ff333333"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@+id/tv_name"
+        android:text="13313040425"
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="15dp"
+        android:text="冀A 12345"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="15dp"
+        android:text="冀A 12345"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_see"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_stroke_a18a65_corners_dp6"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:text="查看"
+        android:textColor="#ffa18a65"
+        android:textSize="12sp" />
+</RelativeLayout>

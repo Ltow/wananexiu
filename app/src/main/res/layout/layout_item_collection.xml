@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <CheckedTextView
+        android:id="@+id/ctv_collection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:drawableStart="@drawable/checkbox_button9"
+        android:gravity="center"
+        android:padding="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/shape_corners_fafafa_dp6"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_order_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="13dp"
+            android:text="订单号：658798544416545165196"
+            android:textColor="#333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="14dp"
+            android:text="订单金额：300.00"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:background="#EEEEEE" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAFAFA">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#EEEEEE" />
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:src="@mipmap/icon_list" />
+
+            <TextView
+                android:id="@+id/tv_che_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_toEndOf="@+id/iv_logo"
+                android:text="冀A·51742"
+                android:textColor="#ff333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_model_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_che_no"
+                android:layout_alignStart="@+id/tv_che_no"
+                android:layout_marginTop="9.5dp"
+                android:text="丰田卡罗拉 2010 1.8T运动款"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_person_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_model_item"
+                android:layout_alignStart="@+id/tv_model_item"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toStartOf="@+id/tv_sy"
+                android:text="负责人："
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_sy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_total"
+                android:layout_toStartOf="@+id/tv_total"
+                android:text="剩余应收："
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="15dp"
+                android:text="李四：13912345678"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_person_ll"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:text="￥500.00"
+                android:textColor="@color/red_color"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

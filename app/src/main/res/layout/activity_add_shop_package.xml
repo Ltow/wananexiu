@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_add_shop_package"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:title="添加门店套餐"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:background="#f6f6f6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/shape_corners_ffffff_dp6"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="*"
+                    android:textColor="#ffe60012"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="25dp"
+                    android:text="套餐名称"
+                    android:textColor="#333"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入套餐名称"
+                    android:paddingStart="105dp"
+                    android:paddingEnd="15dp"
+                    android:textColor="#333"
+                    android:textColorHint="#999"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="25dp"
+                    android:text="关联库存商品"
+                    android:textColor="#333"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_association"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:hint="请选择关联库存商品"
+                    android:onClick="onClick"
+                    android:paddingStart="125dp"
+                    android:paddingEnd="15dp"
+                    android:textColor="#333"
+                    android:textColorHint="#999"
+                    android:textSize="13sp"
+                    app:drawableEndCompat="@mipmap/icon_674" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="*"
+                    android:textColor="#ffe60012"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="25dp"
+                    android:text="零售价(虚拟售价)"
+                    android:textColor="#333"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入零售价"
+                    android:paddingStart="153dp"
+                    android:paddingEnd="15dp"
+                    android:textColor="#333"
+                    android:textColorHint="#999"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:text="元"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="*"
+                    android:textColor="#ffe60012"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="25dp"
+                    android:text="会员价(实际售价）"
+                    android:textColor="#333"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入会员价"
+                    android:paddingStart="153dp"
+                    android:paddingEnd="15dp"
+                    android:textColor="#333"
+                    android:textColorHint="#999"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:text="元"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="*"
+                    android:textColor="#ffe60012"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="25dp"
+                    android:text="平台结算价"
+                    android:textColor="#333"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入平台结算价"
+                    android:paddingStart="153dp"
+                    android:paddingEnd="15dp"
+                    android:textColor="#333"
+                    android:textColorHint="#999"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:text="元"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="*"
+                    android:textColor="#ffe60012"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="25dp"
+                    android:text="适用车型"
+                    android:textColor="#333"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入适用车型"
+                    android:paddingStart="105dp"
+                    android:paddingEnd="15dp"
+                    android:textColor="#333"
+                    android:textColorHint="#999"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="*"
+                    android:textColor="#ffe60012"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="25dp"
+                    android:text="套餐简介"
+                    android:textColor="#333"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入套餐简介"
+                    android:paddingStart="105dp"
+                    android:paddingEnd="15dp"
+                    android:textColor="#333"
+                    android:textColorHint="#999"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="*"
+                    android:textColor="#ffe60012"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="25dp"
+                    android:text="套餐图片"
+                    android:textColor="#333"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/shape_dashed">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="15dp"
+                    android:drawablePadding="15dp"
+                    android:text="添加图片"
+                    android:textColor="#ffbfbfbf"
+                    android:textSize="13sp"
+                    app:drawableTopCompat="@mipmap/icon_add_pic" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="*"
+                    android:textColor="#ffe60012"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="25dp"
+                    android:text="商品详情"
+                    android:textColor="#333"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/shape_dashed">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="15dp"
+                    android:drawablePadding="15dp"
+                    android:text="添加图片"
+                    android:textColor="#ffbfbfbf"
+                    android:textSize="13sp"
+                    app:drawableTopCompat="@mipmap/icon_add_pic" />
+            </RelativeLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/shape_corners_fafafa_dp6"
+                android:gravity="start"
+                android:hint="请完善套餐详情，例如：XX牌机油4升，超出每升加价20元"
+                android:padding="14dp"
+                android:selectAllOnFocus="true"
+                android:textColor="#333"
+                android:textColorHint="#ff999999"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_orange_gradient_dp6_bg"
+        android:gravity="center"
+        android:text="添加"
+        android:textColor="#ffffffff"
+        android:textSize="15sp" />
+</LinearLayout>

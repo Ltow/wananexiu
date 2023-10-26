@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/icon_welfare" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="98dp"
+        android:text="   恭喜您获得新用户礼包"
+        android:textColor="#fffefeff"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="128dp"
+        android:text="   全功能免费试用7天\n     已到账，请查收！"
+        android:textColor="#ffffffff"
+        android:textSize="12sp" />
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="65dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="178dp"
+        android:layout_toStartOf="@+id/v"
+        android:background="@drawable/shape_welfare_bg"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="#ffffffff"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="65dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="178dp"
+        android:layout_toEndOf="@+id/v"
+        android:background="@drawable/shape_welfare_bg"
+        android:gravity="center"
+        android:text="去查看"
+        android:textColor="#ffffffff"
+        android:textSize="10sp" />
+</RelativeLayout>

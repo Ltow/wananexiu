@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_alert_pop_bg"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.员工登录后只可查看分配给自己的单据及其他个人信息。\n2.员工登陆后可查看门店所有单据及其他信息。"
+        android:textColor="#ffffffff"
+        android:textSize="9sp" />
+</LinearLayout>

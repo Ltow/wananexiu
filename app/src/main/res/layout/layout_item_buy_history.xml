@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="5dp"
+    android:background="@drawable/shape_corners_ffffff_dp7"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_order_id"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:gravity="center_vertical"
+        android:text="订单号：2023050910431234567"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp" />
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center_vertical|end"
+        android:text="合计：1500元"
+        android:textColor="#ffe60012"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#EEEEEE" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginStart="15dp"
+        android:gravity="center_vertical"
+        android:text="购买日期：2022-01-01——到期日期：2023-01-01"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+</LinearLayout>

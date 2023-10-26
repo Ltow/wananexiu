@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_my_product"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:rightTitle="购买历史"
+        app:rightTitleColor="#333"
+        app:rightTitleSize="13sp"
+        app:title="我的产品"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_my_product"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:text="已开通产品"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            app:drawableStartCompat="@mipmap/icon_product_information" />
+
+        <TextView
+            android:id="@+id/tv_termTime"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@drawable/shape_corners_ffffff_dp7"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:layout_margin="5dp"
+            android:text="统一到期时间："
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_my_product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp" />
+    </LinearLayout>
+</RelativeLayout>

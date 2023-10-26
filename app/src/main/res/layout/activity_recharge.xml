@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_recharge"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:rightIconTint="#333333"
+        app:title="余额充值"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_recharge"
+        android:layout_marginBottom="65dp"
+        android:background="@color/color_layout_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <CheckBox
+                android:id="@+id/cb_100"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_button10"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onRepeatClick"
+                android:text="100元"
+                android:textColor="#ffffffff"
+                android:textSize="17sp" />
+
+            <CheckBox
+                android:id="@+id/cb_200"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_button10"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onRepeatClick"
+                android:text="200元"
+                android:textColor="#ffffffff"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <CheckBox
+                android:id="@+id/cb_300"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_button10"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onRepeatClick"
+                android:text="300元"
+                android:textColor="#ffffffff"
+                android:textSize="17sp" />
+
+            <CheckBox
+                android:id="@+id/cb_500"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_button10"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onRepeatClick"
+                android:text="500元"
+                android:textColor="#ffffffff"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corners_ffffff_dp3"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:text="充值方式"
+                android:textColor="#ff212121"
+                android:textSize="18sp" />
+
+            <CheckedTextView
+                android:id="@+id/ctv_alli"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@mipmap/icon_ali"
+                android:drawableEnd="@drawable/checkbox_button9"
+                android:drawablePadding="10dp"
+                android:onClick="onRepeatClick"
+                android:padding="15dp"
+                android:text="支付宝"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+            <CheckedTextView
+                android:id="@+id/ctv_wx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/icon_wx"
+                android:drawableEnd="@drawable/checkbox_button9"
+                android:drawablePadding="10dp"
+                android:onClick="onRepeatClick"
+                android:padding="15dp"
+                android:text="微信"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_corners_3477fc_dp6"
+        android:gravity="center"
+        android:text="确定充值"
+        android:textColor="#ffffffff"
+        android:textSize="15sp" />
+</RelativeLayout>

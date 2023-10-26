@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <include layout="@layout/layout_special_title" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_special_title"
+        android:layout_marginBottom="65dp"
+        android:background="#F6F6F6">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_select_friends"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <RelativeLayout
+        android:layout_width="70dp"
+        android:layout_height="64.5dp"
+        android:layout_alignParentBottom="true">
+
+        <CheckBox
+            android:id="@+id/cb_select_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:button="@drawable/checkbox_button4"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:text="全选"
+            android:textColor="#ff3477fc"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/tv_go_inquiry"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/shape_blue_gradient_bg"
+        android:gravity="center"
+        android:onClick="onRepeatClick"
+        android:paddingStart="98dp"
+        android:paddingEnd="98dp"
+        android:text="去询价"
+        android:textColor="#ffffffff"
+        android:textSize="15sp" />
+</RelativeLayout>

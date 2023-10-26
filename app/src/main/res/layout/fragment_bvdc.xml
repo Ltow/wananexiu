@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_layout_bg">
+
+    <ImageView
+        android:id="@+id/iv_bvdc_top"
+        android:layout_width="match_parent"
+        android:layout_height="146dp"
+        android:background="@mipmap/icon_bvdc_top_bg" />
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_bvdc"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@null"
+        app:leftIcon="@null"
+        app:lineVisible="false"
+        app:title="博士德BVDC车辆数据中心"
+        app:titleColor="@color/color_white"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bvdc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_bvdc"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_corners_ffffff_dp6" />
+</RelativeLayout>

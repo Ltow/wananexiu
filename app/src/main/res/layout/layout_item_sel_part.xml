@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="5dp"
+    android:background="@drawable/shape_corners_fafafa_dp6">
+
+    <ImageView
+        android:id="@+id/iv_sel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:src="@mipmap/icon_674"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="15dp"
+        android:text="XXXX机油滤清器"
+        android:textColor="#ff333333"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_oe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_alignStart="@+id/tv_name"
+        android:layout_marginTop="8dp"
+        android:text="OE号"
+        android:textColor="#ff666666"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_oe"
+        android:layout_alignStart="@+id/tv_oe"
+        android:layout_marginTop="8dp"
+        android:layout_toStartOf="@+id/ll_num"
+        android:text="编码"
+        android:textColor="#ff666666"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_code"
+        android:layout_alignStart="@+id/tv_code"
+        android:layout_marginTop="8dp"
+        android:layout_toStartOf="@+id/ll_num"
+        android:text="型号"
+        android:textColor="#ff666666"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_model"
+        android:layout_alignStart="@+id/tv_model"
+        android:layout_marginTop="8dp"
+        android:layout_toStartOf="@+id/ll_num"
+        android:text="品牌"
+        android:textColor="#ff666666"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_brand"
+        android:layout_alignStart="@+id/tv_brand"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="15dp"
+        android:text="上次进货价"
+        android:textColor="#ff666666"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/iv_reduce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@mipmap/icon_reduce" />
+
+        <EditText
+            android:id="@+id/et_num"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/shape_stroke_d6d6d6_corners_dp2"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:selectAllOnFocus="true"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:padding="5dp"
+            android:src="@mipmap/icon_add_part" />
+    </LinearLayout>
+</RelativeLayout>

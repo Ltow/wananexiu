@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <TextView
+        android:id="@+id/tv_hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="99dp"
+        android:text="您好，"
+        android:textColor="#ff333333"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_hello"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:text="欢迎使用万鞍e家平台，立即"
+        android:textColor="#ff333333"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_welcome"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/tv_welcome"
+        android:onClick="onRepeatClick"
+        android:text="注册"
+        android:textColor="#ff3477fc"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/et_phone_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_welcome"
+        android:layout_marginStart="39.5dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="39.5dp"
+        android:hint="手机号"
+        android:inputType="phone"
+        android:selectAllOnFocus="true"
+        android:maxLength="11"
+        android:textColor="@color/color_black"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/et_pass_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_phone_login"
+        android:layout_marginStart="39.5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="39.5dp"
+        android:hint="密码"
+        android:selectAllOnFocus="true"
+        android:inputType="textPassword"
+        android:textColor="@color/color_black"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_pass_login"
+        android:layout_marginTop="16.5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_sel_test"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="39.5dp"
+            android:layout_weight="1"
+            android:onClick="onRepeatClick"
+            android:padding="3dp"
+            android:text="测试账号"
+            android:textColor="#ff3477fc"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_forget_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:onClick="onRepeatClick"
+            android:padding="3dp"
+            android:text="忘记密码？"
+            android:textColor="#ff999999"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_below="@+id/ll_center"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="29.5dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/shape_stroke_cccccc_dp6"
+        android:gravity="center"
+        android:onClick="onRepeatClick"
+        android:text="登录"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_login"
+        android:layout_marginTop="13.5dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cb_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:button="@drawable/checkbox_button4"
+            android:paddingStart="5dp"
+            android:text="已阅读并同意"
+            android:textColor="#ff999999"
+            android:textSize="11sp"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:onClick="onRepeatClick"
+            android:text="《注册协议》"
+            android:textColor="#ff3477fc"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_policy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:onClick="onRepeatClick"
+            android:text="《隐私政策》"
+            android:textColor="#ff3477fc"
+            android:textSize="11sp" />
+    </LinearLayout>
+</RelativeLayout>

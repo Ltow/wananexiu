@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_role_man"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="true"
+        app:rightIcon="@mipmap/icon_title_add"
+        app:title="角色管理"
+        app:titleColor="#333333"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_depart"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_below="@+id/tb_role_man"
+        android:background="#f6f6f6"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="1dp"
+        android:text="维修部"
+        android:textColor="#ff666666"
+        android:textSize="13sp"
+        app:drawableStartCompat="@mipmap/icon_department_wx" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_role"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_depart"
+        android:background="#f6f6f6" />
+</RelativeLayout>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_layout_bg"
+    android:orientation="vertical">
+
+    <com.bossed.waej.customview.NoSlideViewPager
+        android:id="@+id/ns_vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/color_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onRepeatClick">
+
+            <ImageView
+                android:id="@+id/iv_home_page_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7.5dp"
+                android:src="@mipmap/icon1202" />
+
+            <TextView
+                android:id="@+id/tv_home_page_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_home_page_main"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3.5dp"
+                android:gravity="center"
+                android:text="维修管理"
+                android:textColor="@color/color_theme"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_finance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onRepeatClick">
+
+            <ImageView
+                android:id="@+id/iv_finance_page_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7.5dp"
+                android:src="@mipmap/icon_financeun" />
+
+            <TextView
+                android:id="@+id/tv_finance_page_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_finance_page_main"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3.5dp"
+                android:gravity="center"
+                android:text="财务管理"
+                android:textColor="@color/color_theme"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_task"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onRepeatClick"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_task_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7.5dp"
+                android:src="@mipmap/icon1200" />
+
+            <TextView
+                android:id="@+id/tv_task_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_task_main"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3.5dp"
+                android:gravity="center"
+                android:text="今日任务"
+                android:textColor="@color/color_theme"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onRepeatClick"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_search_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7.5dp"
+                android:src="@mipmap/icon1260" />
+
+            <TextView
+                android:id="@+id/tv_search_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_search_main"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3.5dp"
+                android:gravity="center"
+                android:text="查询"
+                android:textColor="@color/color_theme"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_e_jia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onRepeatClick"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_e_jia_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7.5dp"
+                android:src="@mipmap/icon12621" />
+
+            <TextView
+                android:id="@+id/tv_e_jia_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_e_jia_main"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3.5dp"
+                android:gravity="center"
+                android:text="修配E家"
+                android:textColor="@color/color_theme"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_bvdc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onRepeatClick">
+
+            <ImageView
+                android:id="@+id/iv_bvdc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7.5dp"
+                android:src="@mipmap/icon_bvdcun" />
+
+            <TextView
+                android:id="@+id/tv_bvdc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_bvdc"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3.5dp"
+                android:gravity="center"
+                android:text="BVDC"
+                android:textColor="@color/color_theme"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_online"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onRepeatClick">
+
+            <ImageView
+                android:id="@+id/iv_online"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7.5dp"
+                android:src="@mipmap/icon_online" />
+
+            <TextView
+                android:id="@+id/tv_online"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_online"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3.5dp"
+                android:gravity="center"
+                android:text="线上业务"
+                android:textColor="@color/color_theme"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_mine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onRepeatClick">
+
+            <ImageView
+                android:id="@+id/iv_mine_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7.5dp"
+                android:src="@mipmap/icon1262" />
+
+            <TextView
+                android:id="@+id/tv_mine_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_mine_main"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3.5dp"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@color/color_theme"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3795FF"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_mine_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/tb_mine"
+            android:layout_width="match_parent"
+            android:layout_height="22.5dp"
+            app:barStyle="transparent"
+            app:leftIcon="@null"
+            app:titleSize="17sp"
+            app:titleStyle="bold" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/niv_mine"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/tb_mine"
+            android:layout_marginStart="17dp"
+            android:src="@mipmap/icon_head"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/tv_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/niv_mine"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/niv_mine"
+            android:text="西青公寓"
+            android:textColor="#ffffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_shop_name"
+            android:layout_alignStart="@+id/tv_shop_name"
+            android:layout_marginTop="10dp"
+            android:text="张三"
+            android:textColor="#fffffefe"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_user"
+            android:layout_alignStart="@+id/tv_shop_name"
+            android:layout_marginTop="5dp"
+            android:text="1555555"
+            android:textColor="#ffffffff"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_per_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_shop_name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:drawablePadding="5dp"
+            android:text="个人信息"
+            android:textColor="#FFFEFE"
+            android:textSize="13sp"
+            app:drawableTopCompat="@mipmap/icon_per_info" />
+
+        <LinearLayout
+            android:id="@+id/ll_tx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/niv_mine"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="10dp"
+            android:background="@mipmap/icon423"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="19dp"
+                android:text="钱包余额￥"
+                android:textColor="#ffffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="4.5dp"
+                android:layout_weight="1"
+                android:text="0.00"
+                android:textColor="#ffffffff"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/tv_wallet"
+                android:layout_width="67dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/shape_corners_fdd2d0_dp13"
+                android:gravity="center"
+                android:text="立即提现"
+                android:textColor="#0D66DE"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_tx"
+            android:background="@drawable/shape_mine_menu_bg"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_mine_menu_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_mine_menu_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_corners_ffffff_dp7" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="33dp"
+                    android:text="我的邀请人"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_inviteCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="15dp"
+                    android:gravity="center_vertical|end"
+                    android:paddingEnd="15dp"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp"
+                    app:drawableEndCompat="@mipmap/icon_674"
+                    tools:ignore="RtlSymmetry" />
+            </LinearLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <TextView
+                android:id="@+id/tv_system_settings"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="#fff"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical"
+                android:paddingStart="33dp"
+                android:paddingEnd="15dp"
+                android:text="系统设置"
+                android:textColor="#ff333333"
+                android:textSize="13sp"
+                app:drawableEndCompat="@mipmap/icon_674" />
+
+            <ImageView
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:src="@mipmap/icon_logout" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

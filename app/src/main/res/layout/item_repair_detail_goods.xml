@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_repair_detail_goods_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE" />
+
+    <TextView
+        android:id="@+id/tv_number_goods"
+        android:layout_width="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="编号"
+        android:layout_marginBottom="8dp"
+        android:textColor="#333333"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE" />
+
+    <TextView
+        android:id="@+id/tv_cate_goods"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="分类"
+        android:textColor="#ff666666"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE" />
+
+    <TextView
+        android:id="@+id/tv_name_repair_detail_goods"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="品名"
+        android:textColor="#333333"
+        android:textSize="12sp" />
+
+    <!--    <View-->
+    <!--        android:layout_width="0.5dp"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:background="#EEEEEE" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_spec_name"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="规格"-->
+    <!--        android:textColor="#333333"-->
+    <!--        android:textSize="12sp" />-->
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE" />
+
+    <TextView
+        android:id="@+id/tv_goodsNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="需补数量"
+        android:layout_marginTop="8dp"
+        android:textColor="#FB8401"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE" />
+
+    <TextView
+        android:id="@+id/tv_money_repair"
+        android:layout_width="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="100.00"
+        android:textColor="#EC2727"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE" />
+</LinearLayout>

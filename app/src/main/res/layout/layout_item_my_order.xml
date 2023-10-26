@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="18dp"
+            android:text="订单号："
+            android:textColor="#666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_orderSn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="658798544416545165196"
+            android:textColor="#333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="15dp"
+            android:text="待服务"
+            android:textColor="#ffff4545"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_member_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/shape_corners_f8f8f8_dp10"
+        android:paddingBottom="5dp" />
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="10dp"-->
+    <!--        android:layout_marginEnd="10dp"-->
+    <!--        android:background="@drawable/shape_corners_f8f8f8_dp10">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/iv_head"-->
+    <!--            android:layout_width="40dp"-->
+    <!--            android:layout_height="40dp"-->
+    <!--            android:layout_marginStart="5dp"-->
+    <!--            android:layout_marginTop="15dp"-->
+    <!--            android:layout_marginBottom="15dp"-->
+    <!--            android:src="@mipmap/icon_car_logo" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_name"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="15dp"-->
+    <!--            android:layout_marginTop="12dp"-->
+    <!--            android:layout_toEndOf="@+id/iv_head"-->
+    <!--            android:text="基础套餐【主机+辅助摄像头*2】"-->
+    <!--            android:textColor="#ff333333"-->
+    <!--            android:textSize="16sp"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_summary"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@+id/tv_name"-->
+    <!--            android:layout_marginStart="15dp"-->
+    <!--            android:layout_marginTop="5dp"-->
+    <!--            android:layout_marginBottom="15dp"-->
+    <!--            android:layout_toEndOf="@+id/iv_head"-->
+    <!--            android:text="简介：安全设备车载主机*1+辅助摄像头*2"-->
+    <!--            android:textColor="#ff666666"-->
+    <!--            android:textSize="13sp" />-->
+    <!--    </RelativeLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_money"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@+id/tv_money"
+            android:text="结算"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="¥80.00"
+            android:textColor="#ffe60012"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</LinearLayout>

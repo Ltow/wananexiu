@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="5dp"
+    android:background="@drawable/shape_corners_ffffff_dp7"
+    android:orientation="vertical"
+    app:contentView="@+id/ll_content"
+    app:rightMenuView="@+id/rl_delete">
+
+    <RelativeLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_person"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="19dp"
+            android:src="@mipmap/icon_head1" />
+
+        <TextView
+            android:id="@+id/tv_dispatch_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/iv_person"
+            android:text="石家庄二哥"
+            android:textColor="#ff333333"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_seniority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dispatch_name"
+            android:layout_alignStart="@+id/tv_dispatch_name"
+            android:layout_marginTop="10dp"
+            android:text="工龄：5"
+            android:textColor="#ff333333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_seniority"
+            android:layout_alignStart="@+id/tv_seniority"
+            android:layout_marginTop="10dp"
+            android:text="角色："
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_skill_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_role"
+            android:layout_alignStart="@+id/tv_role"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="描述："
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_dispatch_name"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@+id/tv_dispatch_name"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="18633932854"
+            android:textColor="#ff666666"
+            android:textSize="12sp"
+            app:drawableEndCompat="@mipmap/icon_call" />
+
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/sb_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_phone"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:kswBackDrawable="@drawable/track"
+            app:kswTextOff="禁用"
+            app:kswTextOn="启用"
+            app:kswThumbDrawable="@drawable/thumb" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sb_person"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="累计提成：0元"
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_delete"
+        android:layout_width="44dp"
+        android:layout_height="match_parent"
+        android:background="#FA5A67">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="删除"
+            android:textColor="#ffffffff"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout>

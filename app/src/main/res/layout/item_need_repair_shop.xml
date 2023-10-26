@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_need_repair_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_white">
+
+    <ImageView
+        android:id="@+id/iv_logo_need_repair"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tv_shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9.5dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/iv_logo_need_repair"
+        android:text="风驰专业汽修"
+        android:textColor="#ff333333"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_term_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_shop_name"
+        android:layout_alignStart="@+id/tv_shop_name"
+        android:layout_marginTop="8dp"
+        android:text="倒计时："
+        android:visibility="gone"
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_time_need_repair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_term_down"
+        android:layout_toEndOf="@+id/tv_term_down"
+        android:text="2小时14分20秒"
+        android:visibility="gone"
+        android:textColor="#fffc2525"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_distance_need"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_shop_name"
+        android:layout_alignStart="@+id/tv_shop_name"
+        android:layout_marginTop="8dp"
+        android:text="距离："
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_sum_order_need"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_distance_need"
+        android:layout_alignStart="@+id/tv_distance_need"
+        android:layout_marginTop="8dp"
+        android:text="距离："
+        android:textColor="#ff666666"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/iv_logo_need_repair"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="#EEEEEE" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16.5dp"
+        android:src="@mipmap/icon_674" />
+</RelativeLayout>

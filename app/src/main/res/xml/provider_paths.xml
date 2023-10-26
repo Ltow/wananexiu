@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path
+        name="files_root"
+        path="Android/data/cn.com.bossed.dckx/" />
+    <external-path
+        name="external_storage_root"
+        path="." />
+    <external-path
+        name="camera_photos"
+        path="." />
+    <external-path
+        name="apk"
+        path="/waej/apk"/>
+    <external-path
+        name="root_path"
+        path="." />
+    <root-path
+        name="root_path"
+        path="." />
+</paths>

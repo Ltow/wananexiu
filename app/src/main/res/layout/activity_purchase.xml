@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_purchase"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:title="进货单"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_purchase"
+        android:layout_marginBottom="65dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="33dp"
+                android:text="供应商名称"
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="122dp"
+                android:background="@null"
+                android:focusableInTouchMode="true"
+                android:hint="请输入供应商名称"
+                android:paddingEnd="10dp"
+                android:selectAllOnFocus="true"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#EEEEEE" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="33dp"
+                android:text="联系人"
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/et_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical"
+                android:paddingStart="122dp"
+                android:paddingEnd="10dp"
+                android:selectAllOnFocus="true"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#EEEEEE" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="33dp"
+                android:text="联系电话"
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical"
+                android:maxLength="11"
+                android:paddingStart="122dp"
+                android:paddingEnd="10dp"
+                android:selectAllOnFocus="true"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f6f6f6">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:paddingEnd="1dp"
+                android:text="配件列表"
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                app:drawableStartCompat="@mipmap/icon_service_msg" />
+
+            <TextView
+                android:id="@+id/tv_add_part"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/shape_stroke_fc8a25_dp6"
+                android:drawablePadding="2dp"
+                android:gravity="center_vertical"
+                android:onClick="onClick"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="选择配件"
+                android:textColor="#FC8A25"
+                android:textSize="13sp"
+                app:drawableStartCompat="@mipmap/icon_add_item"
+                app:drawableTint="#FC8A25" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_purchase"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="19dp"
+            android:text="合计"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="0.00元"
+            android:textColor="#ffe60012"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_settle"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_orange_gradient_dp6_bg"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="结算"
+            android:textColor="#ffffffff"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/tv_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_blue_gradient_bg"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="保存草稿"
+            android:textColor="#ffffffff"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/tv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/shape_grey_gradient_bg"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="作废"
+            android:textColor="#ffffffff"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </LinearLayout>
+</RelativeLayout>

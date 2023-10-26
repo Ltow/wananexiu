@@ -1,0 +1,92 @@
+package com.bossed.waej.javebean
+
+data class HomePageBean(
+    val code: Int,
+    val `data`: HomePageData,
+    val msg: String
+)
+
+data class HomePageData(
+    val kmShopHomeVo: KmShopHomeVo,
+    val numCar: String,
+    val numInShop: String?,
+    val numOnShop: String,
+    val numWorkorder: String,
+    val sysUser: SysUser,
+    val turnoverDay: String,
+    val turnoverMonth: String,
+    val remindMaintenance: String,
+    val remindInsure: String,
+    val remindDue: String,
+    val workOrderPrice: String,
+    val workOrderInService: String
+)
+
+data class KmShopHomeVo(
+    val address: String,
+    val browseCount: String,
+    val businessBegin: String,
+    val businessEnd: String,
+    val businessIntroduction: String,
+    val businessLicense: String,
+    val businessStatus: Int,
+    val businessTime: String,
+    val city: String,
+    val contactName: String,
+    val contactPhone: String,
+    val county: String,
+    val deviceDescription: String,
+    val doorPhoto: String,
+    val entryTime: String,
+    val followCount: String,
+    val freecheckitems: String,
+    val fullname: String,
+    val id: Int,
+    val idCardBack: String,
+    val idCardFront: String,
+    val isDefault: Int,
+    val latitude: String,
+    val longitude: String,
+    val madeFeeRate: Float,
+    val madeRate: Float,
+    val madeType: Int,
+    val mainModels: String,
+    val operationStation: Int,
+    val praseCount: Int,
+    val promise: String,
+    val promotion: String,
+    val province: String,
+    val rejectCause: String,
+    val score: String,
+    val shopDescription: String,
+    val shopMiniQrcode: String,
+    val shopNumber: String,
+    val shopPhone: String,
+    val shopTrade: String,
+    val shopType: String,
+    val shopkeeperId: Int,
+    val status: Int,
+    val tags: String,
+    val inviteCode: String,
+    val technicianNum: String
+)
+
+data class SysUser(
+    val admin: Boolean,
+    val avatar: String,
+    val delFlag: String,
+    val deptId: Int,
+    val email: String,
+    val loginDate: String,
+    val loginIp: String,
+    val nickName: String,
+    val phonenumber: String,
+    val remark: String,
+    val roleId: Int,
+    val sex: String,
+    val shopId: Int,
+    val status: String,
+    val userId: Int,
+    val userName: String,
+    val userType: String
+)

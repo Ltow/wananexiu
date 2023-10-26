@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_reservation_info"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:title="预约确认"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corners_ffffff_dp6"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="套餐商品信息"
+                android:textColor="#ff333333"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_record_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f6f6f6" />
+            <!--            <RelativeLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content">-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/iv_head"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="10dp"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:layout_marginBottom="5dp"-->
+            <!--                    android:src="@mipmap/icon_car_logo" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/tv_name"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_alignTop="@+id/iv_head"-->
+            <!--                    android:layout_marginStart="15dp"-->
+            <!--                    android:layout_toEndOf="@+id/iv_head"-->
+            <!--                    android:text="基础套餐{主机+摄像头}"-->
+            <!--                    android:textColor="#ff666666"-->
+            <!--                    android:textSize="13sp" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/tv_summary"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_below="@+id/tv_name"-->
+            <!--                    android:layout_marginStart="15dp"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:layout_toEndOf="@+id/iv_head"-->
+            <!--                    android:text="简介："-->
+            <!--                    android:textColor="#ff666666"-->
+            <!--                    android:textSize="13sp" />-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_alignParentEnd="true"-->
+            <!--                    android:layout_centerVertical="true"-->
+            <!--                    android:layout_marginStart="15dp"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:layout_marginEnd="15dp"-->
+            <!--                    android:text="x1"-->
+            <!--                    android:textColor="#ff666666"-->
+            <!--                    android:textSize="13sp" />-->
+            <!--            </RelativeLayout>-->
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="5dp"
+            android:text="订单信息"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            app:drawableStartCompat="@mipmap/icon_order_msg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/shape_corners_ffffff_dp6"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="18dp"
+                    android:text="预约时间"
+                    android:textColor="#ff666666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="110dp"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="18dp"
+                    android:text="车辆品牌"
+                    android:textColor="#ff666666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="110dp"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="18dp"
+                    android:text="车牌号"
+                    android:textColor="#ff666666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_car_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="110dp"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="18dp"
+                    android:text="车辆类别"
+                    android:textColor="#ff666666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="110dp"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/line_eee_s_e_dp15" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="18dp"
+                    android:text="车辆类型"
+                    android:textColor="#ff666666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_type1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="110dp"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:text="如无法承接服务，请与设备服务商取得联系！"-->
+<!--            android:textColor="#ff333333"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_lxr"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:text="联系人：张三       联系方式：18888888888"-->
+<!--            android:textColor="#ff333333"-->
+<!--            android:textSize="13sp" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_commit"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_grey_gradient_bg"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="修改时间"
+            android:textColor="#ffffffff"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_blue_gradient_bg"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="取消预约"
+            android:textColor="#ffffffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_sel_car_model"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:title="选择车型"
+        app:titleColor="#333333"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_search_brand"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_below="@+id/tb_sel_car_model"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@+id/tv_scan_car"
+        android:background="@drawable/shape_corners_f6f6f6_dp17"
+        android:drawableStart="@mipmap/icon_search"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:hint="请输入车系名称（如：朗逸）"
+        android:paddingStart="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="#ff999999"
+        android:textSize="13sp"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/tv_scan_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tb_sel_car_model"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:drawablePadding="6dp"
+        android:text="扫码识车"
+        android:textColor="#3477FC"
+        android:textSize="9sp"
+        app:drawableTopCompat="@mipmap/icon_scan_blue"
+        tools:ignore="SmallSp" />
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/dl_car_model"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_below="@+id/tv_scan_car"
+        android:layout_marginTop="11dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="#F6F6F6"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="热门品牌"
+                android:textColor="#ff333333"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+
+            <com.bossed.waej.customview.BrandRecyclerView
+                android:id="@+id/crv_all_brand"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_right"
+            android:layout_width="305dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@color/white"
+            android:orientation="vertical"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="车牌加车"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:id="@+id/iv_car_logo"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_car_brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:text="安驰"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_series_car"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="14dp" />
+        </LinearLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</RelativeLayout>

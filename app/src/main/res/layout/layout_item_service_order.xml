@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/shape_corners_ffffff_dp10"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_order_date"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:drawablePadding="7dp"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="2022-06-08 15:30"
+        android:textColor="#ff666666"
+        android:textSize="12sp"
+        app:drawableStartCompat="@mipmap/icon_date" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/tv_list_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:text="单号：658798544416545165196"
+                android:textColor="#333"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@+id/tv_edit"
+                android:text="服务中"
+                android:textColor="#fffc8a25"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/shape_corners_3477fc_dp2"
+                android:gravity="center"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:text="查看"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_time"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/iv_logo"-->
+        <!--            android:layout_marginStart="20dp"-->
+        <!--            android:layout_marginTop="13dp"-->
+        <!--            android:text="15:30"-->
+        <!--            android:textColor="#ff666666"-->
+        <!--            android:textSize="12sp" />-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/rl_top"
+            android:background="#EEEEEE" />
+
+
+        <!--        <RelativeLayout-->
+        <!--            android:id="@+id/rl_img"-->
+        <!--            android:layout_below="@+id/rl_top"-->
+        <!--            android:layout_width="40dp"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:layout_marginStart="18dp"-->
+        <!--            android:layout_marginTop="18dp"-->
+        <!--            android:background="@drawable/shape_stroke_cccccc_corners_dp0">-->
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_top"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:src="@mipmap/icon_list" />
+        <!--        </RelativeLayout>-->
+
+        <TextView
+            android:id="@+id/tv_che_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_top"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/iv_logo"
+            android:text="冀A·51742"
+            android:textColor="#ff333333"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_model_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_che_no"
+            android:layout_alignStart="@+id/tv_che_no"
+            android:layout_marginTop="9.5dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="15dp"
+            android:text="丰田卡罗拉 2010 1.8T运动款"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_person_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_model_item"
+            android:layout_alignStart="@+id/tv_model_item"
+            android:layout_marginBottom="10dp"
+            android:layout_toStartOf="@+id/tv_total"
+            android:text="负责人："
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_top"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="15dp"
+            android:text="李四：13912345678"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_person_ll"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:text="￥500.00"
+            android:textColor="@color/red_color"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>

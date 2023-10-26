@@ -1,0 +1,51 @@
+package com.bossed.waej.javebean
+
+data class JieCheDraftBean(
+    val code: Int,
+    val msg: String,
+    val rows: List<JieCheRow>,
+    val total: Int
+)
+
+data class JieCheRow(
+    val brandLogo: String,
+    val brandName: String,
+    val carId: Int,
+    val carName: String,
+    val cardMoney: Double,
+    val cardNo: String,
+    val costPriceTime: String,
+    val createBy: String,
+    val createTime: String,
+    val customerId: Int,
+    val customerName: String,
+    val customerPhone: String,
+    val discountAmount: Double,
+    val dispatchTime: String,
+    val finishedTime: String,
+    val grossProfitMoney: Double,
+    val id: Int,
+    val itemCostMoney: Double,
+    val itemMadeFee: Double,
+    val itemMadeMoney: Double,
+    val mileage: String,
+    val netProfitMoney: Double,
+    val oilNum: String,
+    val oilType: String,
+    val orderMoney: Double,
+    val orderSn: String,
+    val orderStatus: Int,
+    val orderType: Int,
+    val payStatus: Int,
+    val realMoney: Double,
+    val remark: String,
+    val shopId: Int,
+    val tenantId: Int,
+    val updateBy: String,
+    val receiveBy: String,
+    val receiveTime: String,
+    val updateTime: String,
+    val userCarId: Int,
+    val numItem: Int,
+    val vnCode: String
+)

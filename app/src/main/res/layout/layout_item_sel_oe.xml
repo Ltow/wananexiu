@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:text="OE号："
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_oe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="11dp"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_details"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="20dp"-->
+        <!--            android:layout_gravity="center_vertical"-->
+        <!--            android:layout_marginEnd="15dp"-->
+        <!--            android:background="@drawable/shape_corners_3477fc_dp3"-->
+        <!--            android:gravity="center"-->
+        <!--            android:paddingStart="7dp"-->
+        <!--            android:paddingEnd="7dp"-->
+        <!--            android:text="获取指导价"-->
+        <!--            android:textColor="#ffffffff"-->
+        <!--            android:textSize="12sp" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/l1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:text="原厂零件名称："
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingStart="11dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="11dp"
+            android:paddingBottom="5dp"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#f5f5f5" />
+
+    <CheckedTextView
+        android:id="@+id/ctv_sel_oe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:drawableEnd="@drawable/checkbox_button9" />
+</RelativeLayout>

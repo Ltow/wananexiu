@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="35dp"
+    android:layout_marginEnd="35dp"
+    android:layout_marginBottom="20dp"
+    android:background="@mipmap/icon_exchange_item"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="维修管理标准包"
+        android:textColor="#ffffffff"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="10dp"
+        android:text="包含功能：接车开单、服务中工单、历史工单、客户档案、提醒管理"
+        android:textColor="#fff7d438"
+        android:textSize="12sp" />
+</LinearLayout>

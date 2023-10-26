@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_update_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@null"
+        app:leftTitle="取消"
+        app:leftTitleColor="#333333"
+        app:leftTitleSize="13sp"
+        app:lineVisible="false"
+        app:rightIconTint="#333333"
+        app:rightTitle="完成"
+        app:rightTitleColor="#999999"
+        app:rightTitleSize="13sp"
+        app:title="修改密码"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_update_pwd"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="18dp"
+                android:text="旧密码"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_old"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="80dp"
+                android:background="@null"
+                android:hint="请填写旧密码"
+                android:inputType="textPassword"
+                android:maxLength="18"
+                android:selectAllOnFocus="true"
+                android:textColor="@color/black"
+                android:textColorHint="#ff999999"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="#EEEEEE" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="18dp"
+                android:text="新密码"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_new"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="80dp"
+                android:background="@null"
+                android:hint="请填写新密码"
+                android:selectAllOnFocus="true"
+                android:inputType="textPassword"
+                android:maxLength="18"
+                android:textColor="@color/black"
+                android:textColorHint="#ff999999"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="#EEEEEE" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="18dp"
+                android:text="确认密码"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_again"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="80dp"
+                android:background="@null"
+                android:selectAllOnFocus="true"
+                android:hint="请再次输入新密码"
+                android:inputType="textPassword"
+                android:maxLength="18"
+                android:textColor="@color/black"
+                android:textColorHint="#ff999999"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="#EEEEEE" />
+    </LinearLayout>
+</RelativeLayout>

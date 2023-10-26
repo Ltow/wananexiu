@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_corners_ffffff_dp15"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:text="设置提醒"
+        android:textColor="#ff333333"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_stroke_eeeeee_corners_dp5"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/cb_bx_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:button="@null"
+            android:drawableStart="@drawable/checkbox_button7"
+            android:drawablePadding="5dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="保险提醒"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_bx_alert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="27dp"
+                    android:text="商业险到期日期"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_date_sy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="2023.01.30"
+                    android:textColor="#ff666666"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="27dp"
+                    android:text="交强险到期日期"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_date_jq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="2023.01.30"
+                    android:textColor="#ff666666"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="27dp"
+                    android:text="保险到期前"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/et_advanceInsure"
+                    android:layout_width="37dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/shape_stroke_eeeeee_corners_dp5"
+                    android:gravity="center"
+                    android:inputType="number"
+
+                    android:textColor="#333"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="天开始提醒"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#EEEEEE" />
+
+        <CheckBox
+            android:id="@+id/cb_nj_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:button="@null"
+            android:drawableStart="@drawable/checkbox_button7"
+            android:drawablePadding="5dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="年检提醒"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_nj_alert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="27dp"
+                    android:text="年检到期日期"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_nj_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="2023.01.30"
+                    android:textColor="#ff666666"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="27dp"
+                    android:text="年检到期前"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/et_advanceDue"
+                    android:layout_width="37dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/shape_stroke_eeeeee_corners_dp5"
+                    android:gravity="center"
+                    android:inputType="number"
+
+                    android:textColor="#333"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="天开始提醒"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#EEEEEE" />
+
+        <CheckBox
+            android:id="@+id/cb_by_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:button="@null"
+            android:drawableStart="@drawable/checkbox_button7"
+            android:drawablePadding="5dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            android:text="保养提醒"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_by_alert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_gls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableStart="@drawable/checkbox_button7"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:text="预估公里数提醒"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableStart="@drawable/checkbox_button7"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:text="预估时间提醒"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_gls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="27dp"
+                        android:text="当前行驶里程"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/et_mileage"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginEnd="40dp"
+                        android:background="@drawable/shape_stroke_eeeeee_corners_dp5"
+                        android:gravity="center_vertical"
+                        android:hint="请输入里程"
+                        android:inputType="number"
+                        android:paddingStart="10dp"
+
+                        android:textColor="#ff333333"
+                        android:textColorHint="#ff999999"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="27dp"
+                        android:text="下次保养里程"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/et_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginEnd="40dp"
+                        android:background="@drawable/shape_stroke_eeeeee_corners_dp5"
+                        android:gravity="center_vertical"
+                        android:hint="请输入里程"
+                        android:inputType="number"
+                        android:paddingStart="10dp"
+
+                        android:textColor="#ff333333"
+                        android:textColorHint="#ff999999"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="27dp"
+                        android:text="预计每日行驶里程"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/et_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginEnd="40dp"
+                        android:background="@drawable/shape_stroke_eeeeee_corners_dp5"
+                        android:gravity="center_vertical"
+                        android:hint="请输入里程"
+                        android:inputType="number"
+                        android:paddingStart="10dp"
+
+                        android:textColor="#ff333333"
+                        android:textColorHint="#ff999999"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="27dp"
+                        android:text="预计下次保养日期"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tv_next_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="2023.01.30"
+                        android:textColor="#ff666666"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="15dp"
+                android:background="#EEEEEE" />
+
+            <RelativeLayout
+                android:id="@+id/rl_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="27dp"
+                    android:text="预计下次保养日期"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_an_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="140dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/shape_stroke_eeeeee_corners_dp5"
+                    android:gravity="center_vertical"
+                    android:hint="请选择日期"
+                    android:paddingStart="10dp"
+                    android:textColor="#ff333333"
+                    android:textColorHint="#ff999999"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="27dp"
+                    android:text="下次保养前"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/et_advanceMaintenance"
+                    android:layout_width="37dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/shape_stroke_eeeeee_corners_dp5"
+                    android:gravity="center"
+                    android:inputType="number"
+
+                    android:textColor="#333"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="天开始提醒"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_stroke_cccccc_dp6"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="#ffffffff"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/tv_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_blue_gradient_bg"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="#ffffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

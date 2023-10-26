@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_car_model"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:title="请选择车型"
+        app:titleColor="#333333"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_pl_top"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_below="@+id/tb_car_model"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_car_logo"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:id="@+id/tv_car_brand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_scan_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="15dp"
+            android:drawablePadding="6dp"
+            android:text="扫码识车"
+            android:textColor="#3477FC"
+            android:textSize="9sp"
+            app:drawableTopCompat="@mipmap/icon_scan_blue"
+            tools:ignore="SmallSp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_nf_top"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@+id/ll_pl_top"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_pl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:drawablePadding="15dp"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            app:drawableEndCompat="@mipmap/icon_674" />
+
+        <TextView
+            android:id="@+id/tv_nf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:drawablePadding="15dp"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            app:drawableEndCompat="@mipmap/icon_674" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_below="@+id/ll_nf_top"
+        android:background="#F6F6F6"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:text="选择车型"
+        android:textColor="#ff333333"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_car_model"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_nf_top"
+        android:layout_marginTop="27dp" />
+</RelativeLayout>

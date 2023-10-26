@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_alert_pop_bg"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="平台订单服务完毕后：\n车主未点击确定服务完毕订单的结算价为冻结金额。\n车主点击确定服务完毕后自动解东转为可提现金额。\n服务完毕3天后车主未点击服务完毕\n系统将自动确认。"
+        android:textColor="#ffffffff"
+        android:textSize="10sp"
+        android:lineHeight="15dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

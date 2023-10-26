@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.bossed.waej">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.CHANGE_CONFIGURATION"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <!--允许程序读写手机状态和身份-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--允许程序访问CellID或WiFi热点来获取粗略的位置-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!--引用查询包下类-->
+    <queries>
+        <package android:name="com.tencent.mm" />
+    </queries>
+
+
+    <application
+        android:name=".base.BaseApplication"
+        android:allowBackup="true"
+        android:exported="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon_logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/icon_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup"
+        tools:targetApi="n">
+
+        <!-- 设置高德地图key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="683c87eadc922db08f3dd91781489b06" />
+
+        <!-- 全局屏幕适配默认宽高-->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="720" />
+
+        <!--适配全面屏-->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+        <!--适配华为（huawei）刘海屏-->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+        <!--适配小米（xiaomi）刘海屏-->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+
+        <activity android:name=".ui.ExceptionHandlerActivity" />
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.bossed.waej"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".ui.LoginActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ForgetPasswordActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SelectShopActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ShopPerfectActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ReceptionDraftActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.NewReceptionActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SelectItemActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MaintainProposalActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.InquiryActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SelectFriendsActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PurchaseActivity"
+            android:label="进货单"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PurchaseSettleActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.OrderListActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.NewOrderActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.OrderHistoryActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.OrderHistoryMsgActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PersonListActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PersonDataActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MaterialPriceActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SupplierMsgActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SupplierListActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MaterialPriceListActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MemberManageActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MemberHandleActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MemberNewActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SelectMemberItemActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.DispatchCommissionActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.DispatchCommissionMsgActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CarBrandActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.AppletUpholdActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.VipUpholdActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.VipOffActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ItemUpholdActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SelectAppletItemActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ItemMsgActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ShopMsgActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.NoticeListActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.NoticeMsgActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CarDisplacementActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CarYearsActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CarModelActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.UploadPicActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CarWashActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ShopPicActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MemberListActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MemberConsumeActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MemberDetailActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CardHistoryActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.StoredActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ScanDetailActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SystemSettingsActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CommissionSettingsActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.FeedbackActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.FeedHistoryActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PhotoViewActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CustomerListActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.NewCustomerActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.amap.AMapActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.amap.MapSearchActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.NotepadActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.NotepadEditActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ContinuousCaptureActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.OESearchActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PartSearchActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.VINSearchActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.BookActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.RecommendActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ReplaceActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ApplicableModelActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.BrandActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SetOfActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.UseTypeCountActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.BalanceActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.RechargeActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SearchHistoryActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PerInfoActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SetNameActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.UpDatePwdActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.DepartmentActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.RoleActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.LimitsActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.AccountActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ActivateSiteActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.BuyProductActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.BuySettlementActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.BYAlertActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.BXAlertActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.NJAlertActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.WorkPicActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SuccessActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.MyProductActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.BuyHistoryActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.OrderInfoActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.RegisterSuccessActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CopeWithListActivity"
+            android:label="应付款列表" />
+        <activity
+            android:name=".ui.PickingListActivity"
+            android:label="领料查询" />
+        <activity
+            android:name=".ui.PricingListActivity"
+            android:label="进货划价" />
+        <activity
+            android:name=".ui.PricingActivity"
+            android:label="进货划价单" />
+        <activity
+            android:name=".ui.OCRScanActivity"
+            android:theme="@style/TransparentAppTheme" />
+        <activity
+            android:name=".ui.SelectPicActivity"
+            android:theme="@style/TransparentAppTheme" />
+        <activity
+            android:name=".ui.CopeWithInfoActivity"
+            android:label="应付款明细" />
+        <activity
+            android:name=".ui.CostTypeActivity"
+            android:label="费用类别设置" />
+        <activity
+            android:name=".ui.CostEntryActivity"
+            android:label="费用录入" />
+        <activity
+            android:name=".ui.CostCountActivity"
+            android:label="费用查询统计" />
+        <activity
+            android:name=".ui.CostCountInfoActivity"
+            android:label="费用查询统计明细" />
+        <activity
+            android:name=".ui.BankAccountUpholdActivity"
+            android:label="银行账号维护" />
+        <activity
+            android:name=".ui.JournalSearchActivity"
+            android:label="日记账查询" />
+        <activity
+            android:name=".ui.BalanceAdjActivity"
+            android:label="余额调整" />
+        <activity
+            android:name=".ui.AdjRecordActivity"
+            android:label="余额调整记录" />
+        <activity
+            android:name=".ui.JournalOccurActivity"
+            android:label="日记账发生" />
+        <activity
+            android:name=".ui.BankRotationActivity"
+            android:label="银行卡互转" />
+        <activity
+            android:name=".ui.RotationHistoryActivity"
+            android:label="银行卡互转记录" />
+        <activity
+            android:name=".ui.CollectionActivity"
+            android:label="收款" />
+        <activity
+            android:name=".ui.CollectionSettleActivity"
+            android:label="收款结算" />
+        <activity
+            android:name=".ui.PaymentActivity"
+            android:label="付款" />
+        <activity
+            android:name=".ui.PaymentSettleActivity"
+            android:label="付款结算" />
+        <activity
+            android:name=".ui.BackCollectionSettleActivity"
+            android:label="退货收款结算" />
+        <activity
+            android:name=".ui.CollectionSearchActivity"
+            android:label="收款查询" />
+        <activity
+            android:name=".ui.PaymentSearchActivity"
+            android:label="付款查询" />
+        <activity
+            android:name=".ui.CollectionInfoActivity"
+            android:label="收款单明细" />
+        <activity
+            android:name=".ui.PaymentInfoActivity"
+            android:label="付款单明细" />
+        <activity
+            android:name=".ui.CollectionReductionActivity"
+            android:label="收款减免" />
+        <activity
+            android:name=".ui.PaymentReductionActivity"
+            android:label="付款减免" />
+        <activity
+            android:name=".ui.ReceivableListActivity"
+            android:label="应收账款总览" />
+        <activity
+            android:name=".ui.ReceivableInfoActivity"
+            android:label="应收账款明细" />
+        <activity
+            android:name=".ui.OrderSettleActivity"
+            android:label="工单结算"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PricingMsgActivity"
+            android:label="完善进货领料"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PickByCustomerInfoActivity"
+            android:label="用料追溯(按客户)" />
+        <activity
+            android:name=".ui.PickByCustomerItemInfoActivity"
+            android:label="用料追溯项目明细(按客户)" />
+        <activity
+            android:name=".ui.PickBySupplierInfoActivity"
+            android:label="用料追溯(按供应商)" />
+        <activity
+            android:name=".ui.PurchaseListActivity"
+            android:label="进货单草稿" />
+        <activity
+            android:name=".ui.SelectPartActivity"
+            android:label="选择配件"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SelectPartActivity3"
+            android:label="选择配件--带库存"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PurchaseHistoryActivity"
+            android:label="进货单查询" />
+        <activity
+            android:name=".ui.PurchaseHistoryInfoActivity"
+            android:label="进货单查询明细" />
+        <activity
+            android:name=".ui.PurchaseBackActivity"
+            android:label="进货退回单"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PurchaseBackHistoryActivity"
+            android:label="进货退回查询" />
+        <activity
+            android:name=".ui.PurchaseBackHistoryInfoActivity"
+            android:label="进货退回查询明细" />
+        <activity
+            android:name=".ui.PartListActivity"
+            android:label="配件信息维护" />
+        <activity
+            android:name=".ui.PartActivity"
+            android:label="配件信息" />
+        <activity
+            android:name=".ui.StockListActivity"
+            android:label="库存商品一览表" />
+        <activity
+            android:name=".ui.StockInfoActivity"
+            android:label="库存商品明细" />
+        <activity
+            android:name=".ui.PrintSettingActivity"
+            android:label="打印设置" />
+        <activity
+            android:name=".ui.SelectPartActivity2"
+            android:label="盘点单选择配件" />
+        <activity
+            android:name=".ui.CheckHistoryActivity"
+            android:label="盘点单查询" />
+        <activity
+            android:name=".ui.CheckInfoActivity"
+            android:label="盘点单明细" />
+        <activity
+            android:name=".ui.CheckActivity"
+            android:label="盘点单"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PurchaseBackSettleActivity"
+            android:label="进货退回结算"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.BackCollectionActivity"
+            android:label="进货退回收款"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ExchangeSuccessActivity"
+            android:label="兑换码结果" />
+        <activity
+            android:name=".ui.UnservicedListActivity"
+            android:label="线上-未服务订单" />
+        <activity
+            android:name=".ui.MyOrderActivity"
+            android:label="线上-我的订单" />
+        <activity
+            android:name=".ui.OrderDetailActivity"
+            android:label="线上-订单详情（已完成）" />
+        <activity
+            android:name=".ui.MyEvaluationActivity"
+            android:label="线上-我的评价"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ShopInfoActivity"
+            android:label="线上-店铺信息"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.RemitAccountActivity"
+            android:label="线上-汇款账号"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SelfSupportActivity"
+            android:label="线上-自营商品"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SelfSupportInfoActivity"
+            android:label="线上-自营商品明细"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SupportSortActivity"
+            android:label="线上-商品类别"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.AssociationPartActivity"
+            android:label="线上-关联商品列表"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SelfPackageActivity"
+            android:label="线上-自营套餐"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.AddShopPackageActivity"
+            android:label="线上-添加门店套餐"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.AddShopItemActivity"
+            android:label="线上-添加服务项目"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ImportShopItemActivity"
+            android:label="线上-导入服务项目列表"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.FreeTestingActivity"
+            android:label="线上-免费检测"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ReservationMoreActivity"
+            android:label="线上-近日预约"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ReservationInfoActivity"
+            android:label="线上-预约详情"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.WalletActivity"
+            android:label="钱包"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.BalanceDetailsActivity"
+            android:label="钱包-余额明细"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.RecordsAccountActivity"
+            android:label="钱包-银行账号"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CashOutActivity"
+            android:label="钱包-提现"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CashOutDetailsActivity"
+            android:label="钱包-详情"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.CashOutRecordsActivity"
+            android:label="钱包-提现记录"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ShopItemSortActivity"
+            android:label="线上-项目分类"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.AppletQRCodeActivity"
+            android:label="线上-小程序二维码"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.TodoAfterActivity"
+            android:label="线上-待处理售后订单"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.TodoAfterInfoActivity"
+            android:label="线上-待处理售后订单-详情"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PlatformActivity"
+            android:label="线上-车服平台申请"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.SignActivity"
+            android:label="线上-签约拉卡拉"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.AddBankCardActivity"
+            android:label="线上-添加拉卡拉银行卡"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ShopRenovationActivity"
+            android:label="线上-小程序模板"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PreviewActivity"
+            android:label="线上-小程序模板1预览"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.Preview2Activity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.Preview3Activity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.Preview4Activity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.Preview5Activity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.PublicGoodsActivity"
+            android:label="线上-公域商品维护"
+            android:windowSoftInputMode="adjustPan" />
+
+        <receiver
+            android:name="com.bossed.waej.service.JPushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <category android:name="com.bossed.waej" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.bossed.waej.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

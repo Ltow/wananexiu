@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_amap"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:rightTitle="确定"
+        app:rightTitleColor="#333333"
+        app:rightTitleSize="13sp"
+        app:title="选择地址信息"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_amap"
+        android:orientation="vertical">
+
+        <com.amap.api.maps2d.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tev_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tb_amap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/shape_corners_dp9"
+        android:drawablePadding="15dp"
+        android:gravity="center_vertical"
+        android:hint="输入店铺详细地址"
+        android:paddingStart="10dp"
+        android:singleLine="true"
+        android:textColorHint="#999999"
+        android:textSize="@dimen/sp_14"
+        app:drawableStartCompat="@mipmap/icon_search" />
+</RelativeLayout>

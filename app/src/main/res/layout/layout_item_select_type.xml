@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cb_item_select_type"
+    android:layout_width="wrap_content"
+    android:layout_height="25dp"
+    android:layout_marginStart="13.5dp"
+    android:layout_marginTop="16.5dp"
+    android:layout_marginEnd="4dp"
+    android:background="@drawable/checkbox_button3"
+    android:button="@null"
+    android:checked="false"
+    android:gravity="center"
+    android:paddingStart="17dp"
+    android:paddingEnd="17dp"
+    android:text="全部"
+    android:textColor="#ffffffff"
+    android:textSize="13sp">
+
+</CheckBox>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_vin_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:rightIconTint="#333333"
+        app:title="博士德BVDC车辆数据中心"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <com.bossed.waej.customview.GradientTextView
+        android:id="@+id/gtv_oe"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="VIN码查询"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:background="#F6F6F6">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_corners_ffffff_dp3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="VIN码"
+                android:textColor="#ff333333"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:background="#F5F5F5" />
+
+            <EditText
+                android:id="@+id/et_vin"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical"
+
+                android:textColor="#ff333333"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/ic_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:onClick="onRepeatClick"
+                android:padding="10dp"
+                android:src="@mipmap/icon_scan_blue" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="45dp"
+            android:background="@drawable/shape_corners_3477fc_dp3"
+            android:gravity="center"
+            android:onClick="onRepeatClick"
+            android:text="查询"
+            android:textColor="#ffffffff"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:text="查询历史"
+                android:textColor="#999"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="onRepeatClick"
+                android:padding="10dp"
+                android:text="清空历史"
+                android:textColor="#666"
+                android:textSize="12sp"
+                app:drawableEndCompat="@mipmap/icon_delete_pic"
+                app:drawableTint="#666" />
+        </LinearLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/flex_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingStart="13dp"
+            android:paddingEnd="13dp"
+            app:alignContent="stretch"
+            app:alignItems="stretch"
+            app:flexWrap="wrap" />
+
+        <LinearLayout
+            android:id="@+id/ll_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_corners_ffffff_dp3"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="13dp"
+                android:gravity="center_horizontal"
+                android:onClick="onRepeatClick"
+                android:paddingTop="17dp"
+                android:paddingBottom="15dp"
+                android:text="查保养项目"
+                android:textColor="#ff333333"
+                android:textSize="12sp"
+                app:drawableTopCompat="@mipmap/icon_byxm" />
+
+            <TextView
+                android:id="@+id/tv_book"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="13dp"
+                android:gravity="center_horizontal"
+                android:onClick="onRepeatClick"
+                android:paddingTop="17dp"
+                android:paddingBottom="15dp"
+                android:text="查保养手册"
+                android:textColor="#ff333333"
+                android:textSize="12sp"
+                app:drawableTopCompat="@mipmap/icon_bysc" />
+
+            <TextView
+                android:id="@+id/tv_part"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="13dp"
+                android:gravity="center_horizontal"
+                android:onClick="onRepeatClick"
+                android:paddingTop="17dp"
+                android:paddingBottom="15dp"
+                android:text="查车型配件"
+                android:textColor="#ff333333"
+                android:textSize="12sp"
+                app:drawableTopCompat="@mipmap/icon_cxpj" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="3dp"
+            android:text="查询信息"
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            app:drawableStartCompat="@mipmap/icon_search_msg" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_vin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_corners_ffffff_dp3" />
+    </LinearLayout>
+    <!--    </androidx.core.widget.NestedScrollView>-->
+</LinearLayout>

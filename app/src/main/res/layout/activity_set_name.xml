@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_set_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@null"
+        app:leftTitle="取消"
+        app:leftTitleColor="#333333"
+        app:leftTitleSize="13sp"
+        app:lineVisible="false"
+        app:rightIconTint="#333333"
+        app:rightTitle="完成"
+        app:rightTitleStyle="bold"
+        app:rightTitleColor="#333"
+        app:rightTitleSize="13sp"
+        app:title="title"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_set_name"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white">
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_toStartOf="@+id/iv_clear"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:maxLength="10"
+                android:paddingStart="16dp"
+                android:selectAllOnFocus="true"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/iv_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                android:src="@mipmap/icon_clear_edit" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white">
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_toStartOf="@+id/iv_clear2"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:selectAllOnFocus="true"
+                android:paddingStart="16dp"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/iv_clear2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                android:src="@mipmap/icon_clear_edit" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white">
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_toStartOf="@+id/iv_clear3"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:maxLength="10"
+                android:selectAllOnFocus="true"
+                android:paddingStart="16dp"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/iv_clear3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                android:visibility="gone"
+                android:src="@mipmap/icon_clear_edit" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

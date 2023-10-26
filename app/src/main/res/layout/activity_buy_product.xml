@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_buy_product"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftIcon="@mipmap/icon_left"
+        app:lineVisible="false"
+        app:title="产品购买"
+        app:titleSize="17sp"
+        app:titleStyle="bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@+id/tb_buy_product"
+        android:layout_marginBottom="65dp"
+        android:background="#f6f6f6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:background="#f6f6f6"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="产品开通"
+                android:textColor="#ff333333"
+                android:textSize="13sp"
+                app:drawableStartCompat="@mipmap/icon_product_information" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_buy_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f6f6f6" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:background="#f6f6f6"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="增加站点"
+                android:textColor="#ff333333"
+                android:textSize="13sp"
+                app:drawableStartCompat="@mipmap/icon_product_information" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_site"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/shape_corners_dp5"
+                    android:onClick="onRepeatClick"
+                    android:orientation="horizontal">
+
+                    <CheckedTextView
+                        android:id="@+id/ctv_sel_zd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:drawableStart="@drawable/checkbox_button9" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="43dp">
+
+                            <TextView
+                                android:id="@+id/tv_name_site"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="维修管理标准包"
+                                android:textColor="#ff333333"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_priceYear_site"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:text="¥200.00/年"
+                                android:textColor="#ffe60012"
+                                android:textSize="13sp" />
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="#EEE" />
+
+                        <TextView
+                            android:id="@+id/tv_remark_site"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="包含功能：接车开单、服务中工单、历史工单、客户档案、提醒管理"
+                            android:textColor="#ff666666"
+                            android:textSize="13sp" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="#E60012"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="增加站点数量"
+                                android:textColor="#333333"
+                                android:textSize="13sp" />
+
+                            <EditText
+                                android:id="@+id/et_num"
+                                android:layout_width="160dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="10dp"
+                                android:background="@drawable/shape_stroke_eeeeee_corners_dp5"
+                                android:gravity="center"
+                                android:hint="请输入需要增加的站点数量"
+                                android:inputType="number"
+
+                                android:textColor="#333"
+                                android:textColorHint="#ff999999"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_priceDay_site"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/shape_site_price_bg"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="0.55元/天"
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:text="共计："
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="￥0.00"
+            android:textColor="#ffe60012"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/iv_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRepeatClick"
+            android:padding="10dp"
+            android:src="@mipmap/icon_alert" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="99dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/shape_orange_gradient_dp6_bg"
+            android:gravity="center"
+            android:onClick="onRepeatClick"
+            android:text="下一步"
+            android:textColor="#ffffffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+</RelativeLayout>
