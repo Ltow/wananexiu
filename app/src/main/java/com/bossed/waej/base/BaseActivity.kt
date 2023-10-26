@@ -38,7 +38,7 @@ import com.blankj.utilcode.constant.PermissionConstants
 abstract class BaseActivity : AppCompatActivity() {
     lateinit var mContext: Context
     lateinit var mActivity: Activity
-
+//fasfasdfasdf
     override fun onCreate(savedInstanceState: Bundle?) {
         //适配全面屏
         val lp: WindowManager.LayoutParams = this.window.attributes
