@@ -38,7 +38,6 @@ import com.blankj.utilcode.constant.PermissionConstants
 abstract class BaseActivity : AppCompatActivity() {
     lateinit var mContext: Context
     lateinit var mActivity: Activity
-//fasfasdfasdf
     override fun onCreate(savedInstanceState: Bundle?) {
         //适配全面屏
         val lp: WindowManager.LayoutParams = this.window.attributes
@@ -94,9 +93,11 @@ abstract class BaseActivity : AppCompatActivity() {
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q -> Settings.System.getString(
                 contentResolver, Settings.Secure.ANDROID_ID
             )
+
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.O -> {
                 tm.imei
             }
+
             else -> {
                 tm.deviceId
             }
@@ -140,6 +141,7 @@ abstract class BaseActivity : AppCompatActivity() {
                 layoutParams.topMargin = BarUtils.getStatusBarHeight()
                 view.layoutParams = layoutParams
             }
+
             else -> {
                 val layoutParams: RelativeLayout.LayoutParams =
                     view.layoutParams as RelativeLayout.LayoutParams
@@ -283,6 +285,7 @@ abstract class BaseActivity : AppCompatActivity() {
                                         t.result.ds1[0].partNum
                                     )
                             }
+
                             t.result.ds2.isNotEmpty() -> {
                                 if (t.result.ds2.size > 1) {
                                     val arrayList = ArrayList<InformationBean>()
@@ -305,6 +308,7 @@ abstract class BaseActivity : AppCompatActivity() {
                                         t.result.ds2[0].amount + "\b" + t.result.ds2[0].unit
                                     )
                             }
+
                             else -> ToastUtils.showShort("查无数据")
                         }
                     } else
