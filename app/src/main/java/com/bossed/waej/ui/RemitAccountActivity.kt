@@ -25,8 +25,10 @@ import com.blankj.utilcode.util.ToastUtils
 import com.bossed.waej.R
 import com.bossed.waej.adapter.IdTypeAdapter
 import com.bossed.waej.base.BaseActivity
+import com.bossed.waej.customview.LoadingDialog
 import com.bossed.waej.customview.PopWindow
 import com.bossed.waej.eventbus.EBLaKaLaBack
+import com.bossed.waej.eventbus.EBSign
 import com.bossed.waej.http.Api
 import com.bossed.waej.http.BaseResourceObserver
 import com.bossed.waej.http.UrlConstants
@@ -40,6 +42,7 @@ import com.bossed.waej.javebean.CitiesBean
 import com.bossed.waej.javebean.City
 import com.bossed.waej.javebean.ContractResponse
 import com.bossed.waej.javebean.IdTypeBean
+import com.bossed.waej.javebean.PostFileResponse
 import com.bossed.waej.javebean.RemitAccountListResponse
 import com.bossed.waej.javebean.RemitAccountResponse
 import com.bossed.waej.util.DateFormatUtils
@@ -58,6 +61,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_remit_account.*
 import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 
 class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongClickListener {
     private var options1Items: ArrayList<City> = ArrayList() //省
@@ -73,16 +77,23 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
     private var signUrl = ""
     private var selectPicType = 0
     private var idCardFront = ""//身份证正面
+    private var lklIdCardFront = ""//身份证正面
     private var idCardBack = ""//身份证背面
-
+    private var lklIdCardBack = ""//身份证背面
+    private var bankCard = ""//银行卡
+    private var lklBankCard = ""//银行卡
+    private lateinit var loadingDialog: LoadingDialog
 
     override fun getLayoutId(): Int {
         return R.layout.activity_remit_account
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        EventBus.getDefault().register(this)
         ImmersionBar.with(this).statusBarDarkFont(true).init()
         setMarginTop(tb_remit_account)
+        loadingDialog = LoadingDialog(this, "加载中...")
+        loadingDialog.setCanceledOnTouchOutside(false)
         val t =
             GsonUtils.fromJson(GetJsonDataUtil.getJson(this, "cities.json"), CitiesBean::class.java)
         //添加一级数据
@@ -104,6 +115,7 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
             //添加三级数据
             options3Items.add(childrenXList)
         }
+        getList()
     }
 
     override fun initListener() {
@@ -120,7 +132,7 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
         })
         iv_sfz_zm.setOnLongClickListener(this)
         iv_sfz_bm.setOnLongClickListener(this)
-
+        iv_card.setOnLongClickListener(this)
     }
 
     override fun onLongClick(v: View?): Boolean {
@@ -134,6 +146,12 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
             R.id.iv_sfz_bm -> {
                 PopupWindowUtils.get().showConfirmPop(this, "是否更换当前图片？") {
                     onClick(tv_sfz_bm)
+                }
+            }
+
+            R.id.iv_card -> {
+                PopupWindowUtils.get().showConfirmPop(this, "是否更换当前图片？") {
+                    onClick(tv_card)
                 }
             }
         }
@@ -194,6 +212,22 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
                 intent.putExtra("selMode", PictureConfig.SINGLE)
                 picLauncher.launch(intent)
                 selectPicType = 1
+            }
+
+            R.id.tv_card -> {//银行卡
+                if (DoubleClicksUtils.get().isFastDoubleClick)
+                    return
+                val intent = Intent(this, SelectPicActivity::class.java)
+                intent.putExtra("selNum", 1)
+                intent.putExtra("selMode", PictureConfig.SINGLE)
+                picLauncher.launch(intent)
+                selectPicType = 3
+            }
+
+            R.id.iv_card -> {
+                if (DoubleClicksUtils.get().isFastDoubleClick)
+                    return
+                PopupWindowUtils.get().showPhotoPop(bankCard, this, ll_content)
             }
 
             R.id.iv_sfz_zm -> {
@@ -346,23 +380,18 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
         val objectKey = "waej3/" + SPUtils.getInstance()
             .getInt("shopId") + "/" + System.currentTimeMillis() + imgName
         val imgUrl = UrlConstants.BaseOssUrl + objectKey
-        when (selectPicType) {
-            0 -> {
-                Glide.with(this).load(imgLocalPath).into(iv_sfz_zm)
-                idCardFront = imgUrl
-                tv_sfz_zm.visibility = View.GONE
-            }
-
-            1 -> {
-                Glide.with(this).load(imgLocalPath).into(iv_sfz_bm)
-                idCardBack = imgUrl
-                tv_sfz_bm.visibility = View.GONE
-            }
-
-////            3 -> {
-////                Glide.with(this@ShopInfoActivity).load(imgLocalPath).into(iv_logo)
-////
-////            }
+//        when (selectPicType) {
+//            0 -> {
+//
+//            }
+//
+//            1 -> {
+//
+//            }
+//
+//            3 -> {
+//
+//            }
 //            4 -> {
 //                Glide.with(this@ShopInfoActivity).load(imgLocalPath).into(iv_door_head)
 //                doorPhoto = imgUrl
@@ -374,12 +403,71 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
 //                shopImage = imgUrl
 //                tv_shop_pic.visibility = View.GONE
 //            }
-        }
+//        }
         OssUtils.get().asyncPutImage(objectKey, imgLocalPath, this,
             object : OssUtils.OnOssCallBackListener {
                 override fun onSuccess(float: Float) {
                     dialog.dismiss()
-                    ToastUtils.showShort("上传成功，用时：${float}秒")
+                    Thread {
+                        LoadingUtils.showLoading(this@RemitAccountActivity, "加载中...")
+                        kotlin.run {
+                            val params = HashMap<String, Any>()
+                            params["file"] = imgUrl
+                            params["type"] = when (selectPicType) {
+                                0 -> "ID_CARD_FRONT"
+                                1 -> "ID_CARD_BEHIND"
+                                3 -> "BANK_CARD"
+                                else -> ""
+                            }
+                            RetrofitUtils.get().postJson(
+                                UrlConstants.PostFileUrl, params, this@RemitAccountActivity,
+                                object : RetrofitUtils.OnCallBackListener {
+                                    override fun onSuccess(s: String) {
+                                        LogUtils.d("tag", s)
+                                        val t = GsonUtils.fromJson(s, PostFileResponse::class.java)
+                                        when (selectPicType) {
+                                            0 -> {
+                                                Glide.with(this@RemitAccountActivity)
+                                                    .load(imgLocalPath).into(iv_sfz_zm)
+                                                idCardFront = imgUrl
+                                                tv_sfz_zm.visibility = View.GONE
+                                                lklIdCardFront = t.data!!.url!!
+                                            }
+
+                                            1 -> {
+                                                lklIdCardBack = t.data!!.url!!
+                                                Glide.with(this@RemitAccountActivity)
+                                                    .load(imgLocalPath).into(iv_sfz_bm)
+                                                idCardBack = imgUrl
+                                                tv_sfz_bm.visibility = View.GONE
+                                            }
+
+                                            3 -> {
+                                                lklBankCard = t.data!!.url!!
+                                                Glide.with(this@RemitAccountActivity)
+                                                    .load(imgLocalPath).into(iv_card)
+                                                bankCard = imgUrl
+                                                tv_card.visibility = View.GONE
+                                            }
+                                        }
+                                    }
+
+                                    override fun onFailed(e: String) {
+                                        PopupWindowUtils.get()
+                                            .showConfirmPop(
+                                                this@RemitAccountActivity,
+                                                "上传失败，请重新上传！"
+                                            ) {
+                                                when (selectPicType) {
+                                                    0 -> onClick(tv_sfz_zm)
+                                                    1 -> onClick(tv_sfz_bm)
+                                                    3 -> onClick(tv_card)
+                                                }
+                                            }
+                                    }
+                                })
+                        }
+                    }.start()
                 }
 
                 override fun onFailed(e: String) {
@@ -463,6 +551,8 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
         params["larIdcard"] = et_larIdcard.text.toString()//证件号码
         params["larIdcardStDt"] = tv_id_start.text.toString()//证件开始日期
         params["larIdcardExpDt"] = tv_id_end.text.toString()//证件有效期
+        params["bankCard"] = bankCard
+        params["lklBankCard"] = lklBankCard
         if (ctv_personal.isChecked) {
             params["acctTypeCode"] = 58
             if (ctv_yes.isChecked)
@@ -471,6 +561,8 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
                 params["isSamePerson"] = 0
                 params["idCardFront"] = idCardFront
                 params["idCardBack"] = idCardBack
+                params["lklIdCardFront"] = lklIdCardFront
+                params["lklIdCardBack"] = lklIdCardBack
             }
         }
         if (ctv_enterprise.isChecked) {
@@ -492,11 +584,11 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
                     LogUtils.d("tag", s)
                     val t = GsonUtils.fromJson(s, RemitAccountResponse::class.java)
                     put(t.data!!.id!!.toInt())
-                    Thread {
-                        kotlin.run {
-
-                        }
-                    }.start()
+//                    Thread {
+//                        kotlin.run {
+//
+//                        }
+//                    }.start()
                 }
 
                 override fun onFailed(e: String) {
@@ -530,6 +622,8 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
         params["larIdcard"] = et_larIdcard.text.toString()//证件号码
         params["larIdcardStDt"] = tv_id_start.text.toString()//证件开始日期
         params["larIdcardExpDt"] = tv_id_end.text.toString()//证件有效期
+        params["bankCard"] = bankCard
+        params["lklBankCard"] = lklBankCard
         if (ctv_personal.isChecked) {
             params["acctTypeCode"] = 58
             if (ctv_yes.isChecked)
@@ -538,6 +632,8 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
                 params["isSamePerson"] = 0
                 params["idCardFront"] = idCardFront
                 params["idCardBack"] = idCardBack
+                params["lklIdCardFront"] = lklIdCardFront
+                params["lklIdCardBack"] = lklIdCardBack
             }
         }
         if (ctv_enterprise.isChecked) {
@@ -573,6 +669,7 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
      * 商户列表
      */
     private fun getList() {
+        loadingDialog.show()
         RetrofitUtils.get()
             .getJson(MerchantListUrl, HashMap(), this, object : RetrofitUtils.OnCallBackListener {
                 override fun onSuccess(s: String) {
@@ -607,23 +704,38 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
                         et_larIdcard.setText(t.rows!![0].larIdcard)
                         tv_id_start.text = t.rows!![0].larIdcardStDt
                         tv_id_end.text = t.rows!![0].larIdcardExpDt
+                        bankCard =
+                            if (TextUtils.isEmpty(t.rows!![0].bankCard)) "" else t.rows!![0].bankCard!!
+                        Glide.with(this@RemitAccountActivity).load(bankCard)
+                            .into(iv_card)
+                        tv_card.visibility =
+                            if (TextUtils.isEmpty(bankCard)) View.VISIBLE else View.GONE
+                        lklBankCard = t.rows!![0].lklBankCard!!
                         when (t.rows!![0].acctTypeCode) {
                             "58" -> {
                                 ctv_personal.isChecked
                                 when (t.rows!![0].isSamePerson) {
                                     0 -> {
                                         ctv_no.isChecked = true
+                                        ctv_yes.isChecked = false
                                         ll_card.visibility = View.VISIBLE
                                         idCardFront = t.rows!![0].idCardFront!!
                                         Glide.with(this@RemitAccountActivity).load(idCardFront)
                                             .into(iv_sfz_zm)
+                                        tv_sfz_zm.visibility =
+                                            if (TextUtils.isEmpty(idCardFront)) View.VISIBLE else View.GONE
                                         idCardBack = t.rows!![0].idCardBack!!
                                         Glide.with(this@RemitAccountActivity).load(idCardBack)
                                             .into(iv_sfz_bm)
+                                        tv_sfz_bm.visibility =
+                                            if (TextUtils.isEmpty(idCardBack)) View.VISIBLE else View.GONE
+                                        lklIdCardFront = t.rows!![0].lklIdCardFront!!
+                                        lklIdCardBack = t.rows!![0].lklIdCardBack!!
                                     }
 
                                     1 -> {
                                         ctv_yes.isChecked = true
+                                        ctv_no.isChecked = false
                                     }
                                 }
                             }
@@ -658,6 +770,7 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
 
                 override fun onFailed(e: String) {
                     ToastUtils.showShort(e)
+                    loadingDialog.dismiss()
                 }
             })
     }
@@ -666,13 +779,11 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
      * 获取商户信息
      */
     private fun getInfo() {
-        LoadingUtils.showLoading(this, "加载中...")
         Api.getInstance().getApiService()
             .getMerchantInfo(id.toInt())
             .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : BaseResourceObserver<String>() {
                 override fun onComplete() {
-                    LoadingUtils.dismissLoading()
                 }
 
                 override fun onSubscribe(d: Disposable) {
@@ -681,75 +792,80 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
                 override fun onNext(s: String) {
                     LogUtils.d("tag", s)
                     val t = GsonUtils.fromJson(s, RemitAccountResponse::class.java)
-                    when (t.code) {
-                        200 -> {
-                            auditStatus = t.data!!.auditStatus!!
-                            if (!TextUtils.isEmpty(t.data!!.signUrl))
-                                signUrl = t.data!!.signUrl!!
-                            when (auditStatus) {
-                                1 -> {
-                                    tv_merCupNo.text =
-                                        if (t.data!!.merCupNo == null) "" else t.data!!.merCupNo!!
-                                    rl_merCupNo.visibility = View.VISIBLE
-                                }
+                    try {
+                        when (t.code) {
+                            200 -> {
+                                auditStatus = t.data!!.auditStatus!!
+                                if (!TextUtils.isEmpty(t.data!!.signUrl))
+                                    signUrl = t.data!!.signUrl!!
+                            }
 
-                                2 -> {
-                                    PopupWindowUtils.get().showConfirmPop(
-                                        this@RemitAccountActivity,
-                                        t.data!!.failCause!!
-                                    ) {
+//                        500 -> {
+//                            rl_review.visibility = View.GONE
+//                            nsv_remit.visibility = View.VISIBLE
+//                            btn_commit.text = "保存"
+//                            ToastUtils.showShort(t.msg)
+//                        }
 
-                                    }
-                                    rl_review.visibility = View.GONE
-                                    nsv_remit.visibility = View.VISIBLE
-                                    btn_commit.text = "保存"
-                                }
+                            401 -> {
+                                PopupWindowUtils.get()
+                                    .showLoginOutTimePop(this@RemitAccountActivity)
+                            }
 
-                                3 -> {//3-审核中
-                                    rl_review.visibility = View.VISIBLE
-                                    nsv_remit.visibility = View.GONE
-                                    tv_review.text = "店铺信息已提交审核\n审核时间一般在1~3个工作日"
-                                    btn_commit.visibility = View.GONE
-                                }
-
-                                4 -> {//4-合同审核中
-                                    rl_review.visibility = View.VISIBLE
-                                    nsv_remit.visibility = View.GONE
-                                    tv_review.text = "签约中\n请前往签约界面进行签约！"
-                                    btn_commit.text = "去签约"
-                                }
-
-                                else -> {
-                                    rl_review.visibility = View.GONE
-                                    nsv_remit.visibility = View.VISIBLE
-                                    btn_commit.text = "保存"
-                                }
+                            else -> {
+                                if (t.msg != null)
+                                    ToastUtils.showShort(t.msg)
+                                else
+                                    ToastUtils.showShort("异常（代码：${t.code}）")
                             }
                         }
+                    } finally {
+                        when (auditStatus) {
+                            1 -> {
+                                tv_merCupNo.text =
+                                    if (t.data!!.merCupNo == null) "" else t.data!!.merCupNo!!
+                                rl_merCupNo.visibility = View.VISIBLE
+                            }
 
-                        500 -> {
-                            rl_review.visibility = View.GONE
-                            nsv_remit.visibility = View.VISIBLE
-                            btn_commit.text = "保存"
-                            ToastUtils.showShort(t.msg)
-                        }
+                            2 -> {
+                                PopupWindowUtils.get().showConfirmPop(
+                                    this@RemitAccountActivity,
+                                    t.data!!.failCause!!
+                                ) {
 
-                        401 -> {
-                            PopupWindowUtils.get().showLoginOutTimePop(this@RemitAccountActivity)
-                        }
+                                }
+                                rl_review.visibility = View.GONE
+                                nsv_remit.visibility = View.VISIBLE
+                                btn_commit.text = "保存"
+                            }
 
-                        else -> {
-                            if (t.msg != null)
-                                ToastUtils.showShort(t.msg)
-                            else
-                                ToastUtils.showShort("异常（代码：${t.code}）")
+                            3 -> {//3-审核中
+                                rl_review.visibility = View.VISIBLE
+                                nsv_remit.visibility = View.GONE
+                                tv_review.text = "店铺信息已提交审核\n审核时间一般在1~3个工作日"
+                                btn_commit.visibility = View.GONE
+                            }
+
+//                                4 -> {//4-合同审核中
+//                                    rl_review.visibility = View.VISIBLE
+//                                    nsv_remit.visibility = View.GONE
+//                                    tv_review.text = "签约中\n请前往签约界面进行签约！"
+//                                    btn_commit.text = "去签约"
+//                                }
+
+                            else -> {
+                                rl_review.visibility = View.GONE
+                                nsv_remit.visibility = View.VISIBLE
+                                btn_commit.text = "保存"
+                            }
                         }
+                        loadingDialog.dismiss()
                     }
                 }
 
                 override fun onError(throwable: Throwable) {
                     ToastUtils.showShort(throwable.message)
-                    LoadingUtils.dismissLoading()
+                    loadingDialog.dismiss()
                 }
             })
     }
@@ -848,6 +964,7 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
             TextUtils.isEmpty(et_openningBankName.text.toString()) -> false
             TextUtils.isEmpty(et_clearingBankCode.text.toString()) -> false
             TextUtils.isEmpty(et_acctNo.text.toString()) -> false
+            TextUtils.isEmpty(bankCard) -> false
             ctv_personal.isChecked && ctv_no.isChecked -> when {
                 TextUtils.isEmpty(idCardFront) -> false
                 TextUtils.isEmpty(idCardBack) -> false
@@ -866,14 +983,25 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
         }
     }
 
+    @Subscribe
+    fun onMessageEvent(eb: EBSign) {
+        if (eb.isBack)
+            getList()
+    }
+
     override fun onBackPressed() {
         super.onBackPressed()
         EventBus.getDefault().post(EBLaKaLaBack(true))
     }
 
-    override fun onResume() {
-        super.onResume()
-        getList()
+    override fun onDestroy() {
+        super.onDestroy()
+        EventBus.getDefault().unregister(this)
     }
+
+//    override fun onResume() {
+//        super.onResume()
+//        getList()
+//    }
 
 }

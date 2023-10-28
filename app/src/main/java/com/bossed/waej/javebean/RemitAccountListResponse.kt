@@ -119,10 +119,16 @@ data class RemitAccountListRow(
     var shopId: String?,
     @SerializedName("idCardFront")
     var idCardFront: String?,
+    @SerializedName("lklIdCardFront")
+    var lklIdCardFront: String?,
     @SerializedName("idCardBack")
     var idCardBack: String?,
+    @SerializedName("lklIdCardBack")
+    var lklIdCardBack: String?,
     @SerializedName("bankCard")
     var bankCard: String?,
+    @SerializedName("lklBankCard")
+    var lklBankCard: String?,
     @SerializedName("status")
     var status: Int?,
     @SerializedName("isSamePerson")

@@ -2,10 +2,10 @@ package com.bossed.waej.http
 
 object UrlConstants {
     //                        const val BASE_URL = "http://waej.hdcsh.com.cn:2260/"//外网
-//    const val BASE_URL = "http://192.168.16.108:2271/"//张硕本地
+    const val BASE_URL = "http://192.168.16.108:2271/"//张硕本地
 //    const val BASE_URL = "http://192.168.16.41:2271/"//郭建民本地
 //    const val BASE_URL = "http://192.168.16.35:2271/"//聂军本地
-    const val BASE_URL = "http://192.168.16.154:2271/"
+//    const val BASE_URL = "http://192.168.16.154:2271/"
 
     const val LoginUrl = "km/index/login"//登录
     const val RegisterUrl = "km/index/register"//注册
@@ -204,4 +204,5 @@ object UrlConstants {
     const val WithdrawalInfoUrl = "plat/platLklMerchantRmbwithdrawal/{id}"//提现详情
     const val RequestUrl = "km/user/waejAudit"//加入平台
     const val RequestStatusUrl = "km/user/queryWaejAuditResult"//加入平台审核状态
+    const val PostFileUrl = "plat/platLklFile"//上传文件
 }

@@ -129,6 +129,14 @@ data class ShopInfoData(
     var status: Int,
     @SerializedName("tags")
     var tags: String,
+    @SerializedName("lklIdCardFront")
+    var lklIdCardFront: String,
+    @SerializedName("lklIdCardBack")
+    var lklIdCardBack: String,
+    @SerializedName("lklBusinessLicense")
+    var lklBusinessLicense: String,
+    @SerializedName("lklDoorPhoto")
+    var lklDoorPhoto: String,
     @SerializedName("technicianNum")
     var technicianNum: Int,
     @SerializedName("withdrawalAccount")

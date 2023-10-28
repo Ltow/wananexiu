@@ -721,8 +721,8 @@
                     android:id="@+id/ll_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -811,8 +811,61 @@
                                 app:drawableTopCompat="@mipmap/icon_add_pic" />
                         </RelativeLayout>
                     </LinearLayout>
-
                 </LinearLayout>
+
+                <include layout="@layout/line_eee_s_e_dp15" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:text="*"
+                        android:textColor="#ffe60012"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="25dp"
+                        android:text="收款银行卡照片"
+                        android:textColor="#333"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/shape_dashed">
+
+                    <ImageView
+                        android:id="@+id/iv_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:onClick="onClick" />
+
+                    <TextView
+                        android:id="@+id/tv_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="15dp"
+                        android:drawablePadding="15dp"
+                        android:onClick="onClick"
+                        android:text="添加照片"
+                        android:textColor="#ffbfbfbf"
+                        android:textSize="13sp"
+                        app:drawableTopCompat="@mipmap/icon_add_pic" />
+                </RelativeLayout>
 
                 <include layout="@layout/line_eee_s_e_dp15" />
 

@@ -32,8 +32,10 @@ import com.bossed.waej.eventbus.EBLaKaLaBack
 import com.bossed.waej.http.Api
 import com.bossed.waej.http.BaseResourceObserver
 import com.bossed.waej.http.UrlConstants
+import com.bossed.waej.http.UrlConstants.PostFileUrl
 import com.bossed.waej.http.UrlConstants.ShopUrl
 import com.bossed.waej.javebean.IdTypeBean
+import com.bossed.waej.javebean.PostFileResponse
 import com.bossed.waej.javebean.ShopInfoResponse
 import com.bossed.waej.ui.amap.AMapActivity
 import com.bossed.waej.util.DoubleClicksUtils
@@ -62,9 +64,13 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
     private var businessBegin = ""
     private var businessEnd = ""
     private var idCardFront = ""//身份证正面
+    private var lklIdCardFront = ""//拉卡拉身份证正面
     private var idCardBack = ""//身份证背面
+    private var lklIdCardBack = ""//拉卡拉身份证背面
     private var businessLicense = ""//营业执照
+    private var lklBusinessLicense = ""//拉卡拉营业执照
     private var doorPhoto = ""//门头照
+    private var lklDoorPhoto = ""//拉卡拉门头照
     private var shopImage = ""//门店照
     private var longitude = ""
     private var latitude = ""
@@ -74,7 +80,6 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
     private var auditStatus = 0//拉卡拉审核状态
     private val shopTypes = ArrayList<IdTypeBean>()
     private var shopType = ""
-    private var bankCard = ""//银行卡
 
     init {
         shopTypes.add(IdTypeBean("商用车（货车）", "SY"))
@@ -109,7 +114,6 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
         iv_license.setOnLongClickListener(this)
         iv_door_head.setOnLongClickListener(this)
         iv_shop_pic.setOnLongClickListener(this)
-        iv_card.setOnLongClickListener(this)
     }
 
     override fun onLongClick(v: View?): Boolean {
@@ -144,11 +148,6 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
                 }
             }
 
-            R.id.iv_card -> {
-                PopupWindowUtils.get().showConfirmPop(this, "是否更换当前图片？") {
-                    onClick(tv_card)
-                }
-            }
         }
         return false
     }
@@ -213,11 +212,6 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
                 PopupWindowUtils.get().showPhotoPop(shopImage, this, ll_content)
             }
 
-            R.id.iv_card -> {
-                if (DoubleClicksUtils.get().isFastDoubleClick)
-                    return
-                PopupWindowUtils.get().showPhotoPop(bankCard, this, ll_content)
-            }
 
             R.id.tv_sfz_zm -> {//负责人身份证-正面
                 if (DoubleClicksUtils.get().isFastDoubleClick)
@@ -247,16 +241,6 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
                 intent.putExtra("selMode", PictureConfig.SINGLE)
                 picLauncher.launch(intent)
                 selectPicType = 2
-            }
-
-            R.id.tv_card -> {//银行卡
-                if (DoubleClicksUtils.get().isFastDoubleClick)
-                    return
-                val intent = Intent(this, SelectPicActivity::class.java)
-                intent.putExtra("selNum", 1)
-                intent.putExtra("selMode", PictureConfig.SINGLE)
-                picLauncher.launch(intent)
-                selectPicType = 3
             }
 
             R.id.tv_door_head -> {//门头照
@@ -456,36 +440,6 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
             .getInt("shopId") + "/" + System.currentTimeMillis() + imgName
         val imgUrl = UrlConstants.BaseOssUrl + objectKey
         when (selectPicType) {
-            0 -> {
-                Glide.with(this@ShopInfoActivity).load(imgLocalPath).into(iv_sfz_zm)
-                idCardFront = imgUrl
-                tv_sfz_zm.visibility = View.GONE
-            }
-
-            1 -> {
-                Glide.with(this@ShopInfoActivity).load(imgLocalPath).into(iv_sfz_bm)
-                idCardBack = imgUrl
-                tv_sfz_bm.visibility = View.GONE
-            }
-
-            2 -> {
-                Glide.with(this@ShopInfoActivity).load(imgLocalPath).into(iv_license)
-                businessLicense = imgUrl
-                tv_license.visibility = View.GONE
-            }
-
-            3 -> {
-                Glide.with(this).load(imgLocalPath).into(iv_card)
-                bankCard = imgUrl
-                tv_card.visibility = View.GONE
-            }
-
-            4 -> {
-                Glide.with(this@ShopInfoActivity).load(imgLocalPath).into(iv_door_head)
-                doorPhoto = imgUrl
-                tv_door_head.visibility = View.GONE
-            }
-
             5 -> {
                 Glide.with(this@ShopInfoActivity).load(imgLocalPath).into(iv_shop_pic)
                 shopImage = imgUrl
@@ -497,6 +451,77 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
                 override fun onSuccess(float: Float) {
                     dialog.dismiss()
                     ToastUtils.showShort("上传成功，用时：${float}秒")
+                    if (selectPicType == 5)
+                        return
+                    Thread {
+                        kotlin.run {
+                            LoadingUtils.showLoading(this@ShopInfoActivity, "加载中...")
+                            val params = HashMap<String, Any>()
+                            params["file"] = imgUrl
+                            params["type"] = when (selectPicType) {
+                                0 -> "FR_ID_CARD_FRONT"
+                                1 -> "FR_ID_CARD_BEHIND"
+                                2 -> "BUSINESS_LICENCE"
+                                4 -> "MERCHANT_PHOTO"
+                                else -> ""
+                            }
+                            RetrofitUtils.get().postJson(PostFileUrl, params, this@ShopInfoActivity,
+                                object : RetrofitUtils.OnCallBackListener {
+                                    override fun onSuccess(s: String) {
+                                        LogUtils.d("tag", s)
+                                        val t = GsonUtils.fromJson(s, PostFileResponse::class.java)
+                                        when (selectPicType) {
+                                            0 -> {
+                                                lklIdCardFront = t.data!!.url!!
+                                                Glide.with(this@ShopInfoActivity).load(imgLocalPath)
+                                                    .into(iv_sfz_zm)
+                                                idCardFront = imgUrl
+                                                tv_sfz_zm.visibility = View.GONE
+                                            }
+
+                                            1 -> {
+                                                lklIdCardBack = t.data!!.url!!
+                                                Glide.with(this@ShopInfoActivity).load(imgLocalPath)
+                                                    .into(iv_sfz_bm)
+                                                idCardBack = imgUrl
+                                                tv_sfz_bm.visibility = View.GONE
+                                            }
+
+                                            2 -> {
+                                                lklBusinessLicense = t.data!!.url!!
+                                                Glide.with(this@ShopInfoActivity).load(imgLocalPath)
+                                                    .into(iv_license)
+                                                businessLicense = imgUrl
+                                                tv_license.visibility = View.GONE
+                                            }
+
+                                            4 -> {
+                                                lklDoorPhoto = t.data!!.url!!
+                                                Glide.with(this@ShopInfoActivity).load(imgLocalPath)
+                                                    .into(iv_door_head)
+                                                doorPhoto = imgUrl
+                                                tv_door_head.visibility = View.GONE
+                                            }
+                                        }
+                                    }
+
+                                    override fun onFailed(e: String) {
+                                        PopupWindowUtils.get()
+                                            .showConfirmPop(
+                                                this@ShopInfoActivity,
+                                                "上传失败，请重新上传！"
+                                            ) {
+                                                when (selectPicType) {
+                                                    0 -> onClick(tv_sfz_zm)
+                                                    1 -> onClick(tv_sfz_bm)
+                                                    2 -> onClick(tv_license)
+                                                    4 -> onClick(tv_door_head)
+                                                }
+                                            }
+                                    }
+                                })
+                        }
+                    }.start()
                 }
 
                 override fun onFailed(e: String) {
@@ -518,7 +543,7 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
             TextUtils.isEmpty(et_contactName.text.toString()) -> ToastUtils.showShort("负责人不能为空")
             TextUtils.isEmpty(idCardFront) -> ToastUtils.showShort("身份证正面不能为空")
             TextUtils.isEmpty(idCardBack) -> ToastUtils.showShort("身份证背面不能为空")
-            TextUtils.isEmpty(bankCard) -> ToastUtils.showShort("请上传银行卡照片")
+//            TextUtils.isEmpty(bankCard) -> ToastUtils.showShort("请上传银行卡照片")
             TextUtils.isEmpty(et_contactPhone.text.toString()) -> ToastUtils.showShort("负责人电话不能为空")
             TextUtils.isEmpty(et_address.text.toString()) -> ToastUtils.showShort("店铺地址不能为空")
             TextUtils.isEmpty(tv_business_hours.text.toString()) -> ToastUtils.showShort("营业时间不能为空")
@@ -544,7 +569,6 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
                 params["businessBegin"] = businessBegin
                 params["businessEnd"] = businessEnd
                 params["businessLicense"] = businessLicense
-                params["bankCard"] = bankCard
 //                params["withdrawalAccount"] = tv_remit_account.text.toString()
                 params["doorPhoto"] = doorPhoto
                 val imageList = ArrayList<HashMap<String, String>>()
@@ -553,6 +577,10 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
                 imageList.add(hashMap)
                 params["kmShopImageVoList"] = imageList
                 params["shopPhone"] = et_shopPhone.text.toString()
+                params["lklDoorPhoto"] = lklDoorPhoto
+                params["lklBusinessLicense"] = lklBusinessLicense
+                params["lklIdCardBack"] = lklIdCardBack
+                params["lklIdCardFront"] = lklIdCardFront
                 LoadingUtils.showLoading(this, "加载中...")
                 RetrofitUtils.get()
                     .putJson(ShopUrl, params, this, object : RetrofitUtils.OnCallBackListener {
@@ -650,12 +678,14 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
                                 shopImage = t.data.kmShopImageVoList!![0].imageUrl
                             setTextViewVisibility(tv_shop_pic, shopImage)
                             Glide.with(this@ShopInfoActivity).load(shopImage).into(iv_shop_pic)
-                            bankCard = t.data.bankCard
-                            Glide.with(this@ShopInfoActivity).load(bankCard).into(iv_card)
                             et_shopPhone.setText(t.data.shopPhone)
 //                            ctv_beidou.isChecked = false
                             longitude = t.data.longitude
                             latitude = t.data.latitude
+                            lklIdCardFront = t.data.lklIdCardFront
+                            lklIdCardBack = t.data.lklIdCardBack
+                            lklBusinessLicense = t.data.lklBusinessLicense
+                            lklDoorPhoto = t.data.lklDoorPhoto
                             when (auditStatus) {
                                 3 -> {//审核中
                                     rl_review.visibility = View.VISIBLE
