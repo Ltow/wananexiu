@@ -304,6 +304,7 @@ class PageFragment : BaseFragment() {
                                 civ_page
                             )
                     }
+
                 }
 
                 override fun onFailed(e: String) {
