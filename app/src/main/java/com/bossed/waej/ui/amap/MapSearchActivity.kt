@@ -90,6 +90,7 @@ class MapSearchActivity : BaseActivity(), OnNoRepeatClickListener, Inputtips.Inp
 
     override fun onGetInputtips(p0: MutableList<Tip>?, p1: Int) {
         if (p1 == 1000) { // 正确返回
+            beans.clear()
             beans.addAll(p0!!)
             mapSearchAdapter.setNewData(beans)
         } else {
