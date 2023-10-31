@@ -4,6 +4,8 @@ import android.app.Dialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.TextUtils
 import android.view.Gravity
 import android.view.View
@@ -455,6 +457,7 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
                         return
                     Thread {
                         kotlin.run {
+                            Looper.prepare()
                             LoadingUtils.showLoading(this@ShopInfoActivity, "加载中...")
                             val params = HashMap<String, Any>()
                             params["file"] = imgUrl
@@ -520,6 +523,7 @@ class ShopInfoActivity : BaseActivity(), View.OnClickListener, OnLongClickListen
                                             }
                                     }
                                 })
+                            Looper.loop()
                         }
                     }.start()
                 }

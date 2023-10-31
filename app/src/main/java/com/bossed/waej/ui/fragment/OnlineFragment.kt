@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.LogUtils
+import com.blankj.utilcode.util.SPUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.bossed.waej.R
 import com.bossed.waej.adapter.OnlineMenuAdapter
@@ -26,6 +27,7 @@ import com.bossed.waej.javebean.PageMenuBean
 import com.bossed.waej.ui.*
 import com.bossed.waej.util.DoubleClicksUtils
 import com.bossed.waej.util.LoadingUtils
+import com.bossed.waej.util.PopupWindowUtils
 import com.bossed.waej.util.RetrofitUtils
 import com.hjq.bar.OnTitleBarListener
 import com.journeyapps.barcodescanner.ScanContract
@@ -273,6 +275,16 @@ class OnlineFragment : BaseFragment(), OnClickListener {
                             }
                         }
                         dialog.show()
+                    } else {
+                        if (TextUtils.isEmpty(SPUtils.getInstance().getString("review")))
+                            PopupWindowUtils.get()
+                                .showOnlyConfirmPop(
+                                    requireActivity(),
+                                    "系统提示",
+                                    "店铺审核已通过。"
+                                ) {
+                                    SPUtils.getInstance().put("review", "true")
+                                }
                     }
                 }
 

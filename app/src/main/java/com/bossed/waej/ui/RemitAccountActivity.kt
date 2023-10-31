@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.text.TextUtils
 import android.view.Gravity
 import android.view.View
@@ -409,8 +410,9 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
                 override fun onSuccess(float: Float) {
                     dialog.dismiss()
                     Thread {
-                        LoadingUtils.showLoading(this@RemitAccountActivity, "加载中...")
                         kotlin.run {
+                            Looper.prepare()
+                            LoadingUtils.showLoading(this@RemitAccountActivity, "加载中...")
                             val params = HashMap<String, Any>()
                             params["file"] = imgUrl
                             params["type"] = when (selectPicType) {
@@ -466,6 +468,7 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
                                             }
                                     }
                                 })
+                            Looper.loop()
                         }
                     }.start()
                 }
@@ -757,6 +760,8 @@ class RemitAccountActivity : BaseActivity(), View.OnClickListener, View.OnLongCl
                         et_remark.setText(t.rows!![0].remark)
                         auditStatus = t.rows!![0].auditStatus!!
                         getInfo()
+                    } else {
+                        loadingDialog.dismiss()
                     }
                     if (TextUtils.isEmpty(et_merRegName.text.toString()))
                         et_merRegName.setText(intent.getStringExtra("businessName"))
